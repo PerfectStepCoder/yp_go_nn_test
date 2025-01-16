@@ -1,0 +1,188 @@
+definitions:
+  models.LoginRequest:
+    properties:
+      name:
+        type: string
+      password:
+        type: string
+    type: object
+  models.LoginResponse:
+    properties:
+      token:
+        type: string
+    type: object
+  models.OperatorRequest:
+    properties:
+      name:
+        type: string
+      password:
+        type: string
+      role:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Нейронные сети по детекции объектов на изображениях
+  title: Нейросети API
+  version: "1.0"
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Authenticate operator and return JWT token
+      parameters:
+      - description: Login credentials
+        in: body
+        name: login
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: JWT Token
+          schema:
+            $ref: '#/definitions/models.LoginResponse'
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "401":
+          description: Invalid credentials
+          schema:
+            type: string
+      summary: Login a operator
+      tags:
+      - Auth
+  /operators/id/{operatorUID}:
+    get:
+      consumes:
+      - application/json
+      description: Get operator
+      parameters:
+      - description: Operator UID
+        in: path
+        name: operatorUID
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Operator
+          schema:
+            type: body
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "404":
+          description: Operator not found
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Get operator by UID
+      tags:
+      - Operators
+  /operators/name/{name}:
+    get:
+      consumes:
+      - application/json
+      description: Get operator
+      parameters:
+      - description: Operator name
+        in: path
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Operator
+          schema:
+            type: body
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+        "404":
+          description: Operator not found
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Get operator by Name
+      tags:
+      - Operators
+  /register:
+    post:
+      consumes:
+      - application/json
+      description: Register a new operator with name and password
+      parameters:
+      - description: Operator data
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.OperatorRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Operator created
+          schema:
+            type: body
+        "400":
+          description: Invalid input
+          schema:
+            type: string
+        "409":
+          description: Operator already exists
+          schema:
+            type: string
+      summary: Register a new operator
+      tags:
+      - Auth
+  /tasks/one:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Create Task with one image
+      parameters:
+      - description: File image
+        in: formData
+        name: file
+        required: true
+        type: file
+      - description: UUID of the task
+        in: formData
+        name: taskUID
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Task one image
+          schema:
+            type: body
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      security:
+      - BearerAuth: []
+      summary: Task
+      tags:
+      - Tasks
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

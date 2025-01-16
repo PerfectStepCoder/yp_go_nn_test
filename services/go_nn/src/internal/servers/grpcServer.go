@@ -98,13 +98,6 @@ func (s *ServerGRPC) CreateBatchsTask(ctx context.Context, in *pb.TaskBatchsRequ
 	inputCh := make(chan *pb.TaskBatchRequest, len(in.Batchs))
 	outputCh := make(chan *pb.TaskBatchResponse, len(in.Batchs))
 
-	for _, batch := range in.Batchs {
-		inputCh <- batch
-	}
-
-	fmt.Printf("Got batches: %d", len(inputCh))
-	close(inputCh)
-
 	// Обработка батчей
 	for i := 0; i < s.countWorkers; i++ {
 		go func(inputCh chan *pb.TaskBatchRequest, outputCh chan *pb.TaskBatchResponse) {
@@ -115,6 +108,13 @@ func (s *ServerGRPC) CreateBatchsTask(ctx context.Context, in *pb.TaskBatchsRequ
 			}
 		}(inputCh, outputCh)
 	}
+
+	// Наполнение канала
+	for _, batch := range in.Batchs {
+		inputCh <- batch
+	}
+	fmt.Printf("Got batches: %d", len(inputCh))
+	close(inputCh)
 
 	// Горутинa для закрытия outputCh после завершения всех обработчиков
 	go func() {

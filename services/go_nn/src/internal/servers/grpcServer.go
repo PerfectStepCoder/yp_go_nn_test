@@ -13,6 +13,10 @@ import (
 	"sync"
 )
 
+const (
+	MaxMessageSize = 50 * 1024 * 1024 // 50 МБ
+)
+
 // ServerGRPC поддерживает все необходимые методы сервера.
 type ServerGRPC struct {
 	nn *engine.OnnxNeuralNetwork
@@ -141,8 +145,8 @@ func (s *ServerGRPC) Start(addr string) error {
 
 	// Cоздаём gRPC-сервер без зарегистрированной службы
 	s.server = grpc.NewServer(
-		grpc.MaxRecvMsgSize(50*1024*1024), // Максимальный размер принимаемого сообщения — 50 МБ
-		grpc.MaxSendMsgSize(50*1024*1024), // Максимальный размер отправляемого сообщения — 50 МБ
+		grpc.MaxRecvMsgSize(MaxMessageSize), // Максимальный размер принимаемого сообщения — 50 МБ
+		grpc.MaxSendMsgSize(MaxMessageSize), // Максимальный размер отправляемого сообщения — 50 МБ
 	)
 
 	// Регистрируем сервис

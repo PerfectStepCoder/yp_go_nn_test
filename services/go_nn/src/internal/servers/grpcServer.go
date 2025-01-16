@@ -7,7 +7,7 @@ import (
 	pb "github.com/PerfectStepCoder/yp_go_nn/src/internal/proto/gen"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/types/known/emptypb"
-	"log"
+	"github.com/PerfectStepCoder/yp_go_nn/src/configs"
 	"net"
 	"runtime"
 	"sync"
@@ -48,14 +48,14 @@ func (s *ServerGRPC) CreateBatchTask(ctx context.Context, in *pb.TaskBatchReques
 	for i, image := range in.Images {
 		img, err := engine.BytesToFloat32Slice(image)
 		if err != nil {
-			fmt.Println(err)
+			configs.Logger.Errorln(err)
 		}
 		images[i] = img
 	}
 
 	labelClassNames, err := s.nn.Detect(images)
 	if err != nil {
-		fmt.Println(err)
+		configs.Logger.Errorln(err)
 	}
 
 	response.TaskUID = in.TaskUID
@@ -73,14 +73,14 @@ func (s *ServerGRPC) CreateBatchCodeTask(ctx context.Context, in *pb.TaskBatchRe
 	for i, image := range in.Images {
 		img, err := engine.BytesToFloat32Slice(image)
 		if err != nil {
-			fmt.Println(err)
+			configs.Logger.Errorln(err)
 		}
 		images[i] = img
 	}
 
 	labelClassCodes, err := s.nn.DetectCode(images)
 	if err != nil {
-		fmt.Println(err)
+		configs.Logger.Errorln(err)
 	}
 
 	response.TaskUID = in.TaskUID
@@ -151,7 +151,7 @@ func (s *ServerGRPC) Start(addr string) error {
 	listen, err := net.Listen("tcp", addr)
 
 	if err != nil {
-		log.Fatalln(err)
+		configs.Logger.Errorln(err)
 	}
 
 	return s.server.Serve(listen)

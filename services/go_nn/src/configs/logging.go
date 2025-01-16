@@ -25,3 +25,7 @@ func GetLogger() *logrus.Logger {
 
 	return logger
 }
+
+func init() {
+    Logger = GetLogger()
+}

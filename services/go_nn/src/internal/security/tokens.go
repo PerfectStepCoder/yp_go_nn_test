@@ -11,7 +11,7 @@ import (
 
 type OperatorJWT struct {
 	OperatorUID string
-	Role    string
+	Role        string
 }
 
 func GenerateJWT(operator *models.Operator) (string, error) {
@@ -21,8 +21,8 @@ func GenerateJWT(operator *models.Operator) (string, error) {
 	// Создание токена с информацией о пользователе
 	claims := &jwt.MapClaims{
 		"operator_uid": operator.OperatorUID,
-		"role":     operator.Role,
-		"exp":      expirationTime.Unix(),
+		"role":         operator.Role,
+		"exp":          expirationTime.Unix(),
 	}
 
 	// Создаем токен с подписью
@@ -46,6 +46,6 @@ func ExtractUserFromClaims(claims *jwt.MapClaims) (*OperatorJWT, error) {
 	// Возвращаем структуру пользователя
 	return &OperatorJWT{
 		OperatorUID: operatorID,
-		Role:    role,
+		Role:        role,
 	}, nil
 }

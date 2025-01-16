@@ -16,15 +16,15 @@ import (
 	"time"
 
 	"github.com/PerfectStepCoder/yp_go_nn/src/configs"
+	"github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
 	"github.com/PerfectStepCoder/yp_go_nn/src/internal/servers"
 	"github.com/PerfectStepCoder/yp_go_nn/src/internal/storage"
-	"github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
 )
 
 var settings = configs.SettingsGlobal
 
 func main() {
-	
+
 	configs.ParseFlags(settings)
 	fmt.Println(settings)
 
@@ -38,17 +38,17 @@ func main() {
 
 	// NeuralNetwork
 	inputLayer := engine.NeuralLayer{
-		Name: "input",
+		Name:  "input",
 		Shape: []int64{1, 28, 28},
 	}
 	outputLayer := engine.NeuralLayer{
-		Name: "output",
+		Name:  "output",
 		Shape: []int64{10},
 	}
 
-	nn := engine.NewOnnxNeuralNetwork("../models/yolo_fashion_mnist.onnx", 
-									  "../lib/libonnxruntime.1.20.1.dylib", inputLayer, outputLayer)
-	
+	nn := engine.NewOnnxNeuralNetwork("../models/yolo_fashion_mnist.onnx",
+		"../lib/libonnxruntime.1.20.1.dylib", inputLayer, outputLayer)
+
 	// Канал для получения системных сигналов (например, SIGINT, SIGTERM)
 	signalChan := make(chan os.Signal, 1)
 	signal.Notify(signalChan, os.Interrupt, syscall.SIGTERM)
@@ -57,18 +57,18 @@ func main() {
 	var serverErr error
 
 	switch settings.ServiceProtocol {
-		case "http":
-			server, serverErr = servers.NewHTTPServer(mainStorage, nn)
-		case "grpc":
-			server, serverErr = servers.NewServerGRPC(nn)
-		default:
-			log.Fatalf("Not support protocol: %s", settings.ServiceProtocol)
+	case "http":
+		server, serverErr = servers.NewHTTPServer(mainStorage, nn)
+	case "grpc":
+		server, serverErr = servers.NewServerGRPC(nn)
+	default:
+		log.Fatalf("Not support protocol: %s", settings.ServiceProtocol)
 	}
 
 	if serverErr != nil {
 		log.Fatalf("Failed to create server: %v", serverErr)
-	}	
-	
+	}
+
 	log.Printf("Service is starting host: %s, port: %s", settings.ServiceHost, settings.ServicePort)
 	serverErr = server.Start(fmt.Sprintf("%s:%s", settings.ServiceHost, settings.ServicePort))
 

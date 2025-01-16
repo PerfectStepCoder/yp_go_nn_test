@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 import onnxruntime as ort
+from tools.arrays import find_max_indices
 
 # YOLO-подобная сеть
 class YOLOFashionMNIST(nn.Module):
@@ -89,3 +90,9 @@ class YOLOFashionMNIST(nn.Module):
         # Выполнение предсказания
         predictions = self.onnx_session.run([output_name], {input_name: input_data_np})[0]
         return predictions
+    
+    def detect_code_onnx(self, input_data: torch.Tensor) -> list[int]:
+        """
+        Метод возвращающий коды классов для батча с изображениями
+        """
+        return find_max_indices(self.predict_onnx(input_data))

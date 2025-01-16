@@ -14,3 +14,5 @@ services/go_nn/src/internal/proto/gen_py/__pycache__/
 services/go_nn/src/lib/
 
 services/go_nn/src/models/
+
+.vscode/

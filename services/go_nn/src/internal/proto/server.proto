@@ -1,14 +1,16 @@
 syntax = "proto3";
 
 import "models.proto";
-//import "google/protobuf/empty.proto";
+import "google/protobuf/empty.proto";
 
 package nn_go;
 
 option go_package = "service/nn_go";
 
 service ClassifyNN {
+  rpc GetInfo (google.protobuf.Empty) returns (ServiceInfoNN);
   rpc CreateOneTask (TaskOneRequest) returns (TaskOneResponse);
-  // rpc CreateBatchTask (TaskBatchRequest) returns (TaskBatchResponse);
-  // rpc CreateBatchCodeTask (TaskBatchRequest) returns (TaskBatchCodeResponse);
+  rpc CreateBatchTask (TaskBatchRequest) returns (TaskBatchResponse);
+  rpc CreateBatchCodeTask (TaskBatchRequest) returns (TaskBatchCodeResponse);
+  rpc CreateBatchsTask (TaskBatchsRequest) returns (TaskBatchsResponse);
 }

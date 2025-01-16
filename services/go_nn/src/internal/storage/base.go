@@ -19,7 +19,6 @@ type StorageOperators interface {
 	GetOperatorByName(username string) (*models.Operator, error)
 }
 
-
 // Storage - интерфейс для хранилища
 type Storage interface {
 	StorageResource

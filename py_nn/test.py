@@ -12,7 +12,7 @@ def test(model, test_loader, device, verbose=True):
             #print(images)
             images, labels = images.to(device), labels.to(device)
             outputs = model(images)
-            print(outputs)
+            #print(outputs)
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             correct += (predicted == labels).sum().item()

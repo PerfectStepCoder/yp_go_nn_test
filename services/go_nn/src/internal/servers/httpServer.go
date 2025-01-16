@@ -2,19 +2,19 @@ package servers
 
 import (
 	"context"
-	"net/http"
-	"github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
 	httpp "github.com/PerfectStepCoder/yp_go_nn/src/api/irest"
 	_ "github.com/PerfectStepCoder/yp_go_nn/src/api/irest/docs" // Импорт сгенерированной документации
+	"github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
 	"github.com/PerfectStepCoder/yp_go_nn/src/internal/storage"
 	"github.com/go-chi/chi/v5"
+	"net/http"
 
 	httpSwagger "github.com/swaggo/http-swagger"
 )
 
 type ServerHTTP struct {
 	storage storage.Storage
-	nn *engine.OnnxNeuralNetwork
+	nn      *engine.OnnxNeuralNetwork
 	router  *chi.Mux
 	server  *http.Server
 }
@@ -22,7 +22,7 @@ type ServerHTTP struct {
 func NewHTTPServer(mainStorage storage.Storage, nn *engine.OnnxNeuralNetwork) (*ServerHTTP, error) {
 	return &ServerHTTP{
 		storage: mainStorage,
-		nn: nn,
+		nn:      nn,
 		router:  chi.NewRouter(),
 	}, nil
 }
@@ -43,13 +43,10 @@ func (s *ServerHTTP) Start(addr string) error {
 		r.Route("/operators", func(r chi.Router) {
 			r.Get("/id/{operatorUID}", httpp.GetOperatorByUIDHandler(s.storage))
 			r.Get("/name/{name}", httpp.GetOperatorByNameHandler(s.storage))
-			// r.Get("/rate", httpp.UserRateHandler(s.storage))
 		})
 		// Tasks
 		r.Route("/tasks", func(r chi.Router) {
 			r.Post("/one", httpp.TaskOneHandler(s.storage, s.nn))
-			// r.Post("/continue", httpp.ContinueHandler(s.storage, s.signals))
-			// r.Get("/status/{gameUID}", httpp.StatusHandler(s.storage))
 		})
 	})
 

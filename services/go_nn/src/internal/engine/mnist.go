@@ -5,16 +5,16 @@ type FashionClass int
 
 // Константы для классов
 const (
-	TShirtTop       FashionClass = iota // 0
-	Trouser                             // 1
-	Pullover                            // 2
-	Dress                               // 3
-	Coat                                // 4
-	Sandal                              // 5
-	Shirt                               // 6
-	Sneaker                             // 7
-	Bag                                 // 8
-	AnkleBoot                           // 9
+	TShirtTop FashionClass = iota // 0
+	Trouser                       // 1
+	Pullover                      // 2
+	Dress                         // 3
+	Coat                          // 4
+	Sandal                        // 5
+	Shirt                         // 6
+	Sneaker                       // 7
+	Bag                           // 8
+	AnkleBoot                     // 9
 )
 
 // Названия классов в строковом виде

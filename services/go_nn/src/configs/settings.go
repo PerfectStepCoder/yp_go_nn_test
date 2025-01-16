@@ -6,10 +6,10 @@ import (
 )
 
 type Settings struct {
-	DatabaseDSN string
-	SecretJWT   []byte
-	ServiceHost string
-	ServicePort string
+	DatabaseDSN     string
+	SecretJWT       []byte
+	ServiceHost     string
+	ServicePort     string
 	ServiceProtocol string
 }
 
@@ -29,17 +29,17 @@ func NewSettings() (*Settings, error) {
 	SERVICE_PROTOCOL := os.Getenv("SERVICE_PROTOCOL")
 
 	return &Settings{
-		DatabaseDSN: dsn,
-		SecretJWT:   []byte(os.Getenv("SECRET_JWT")),
-		ServiceHost: SERVICE_HOST,
-		ServicePort: SERVICE_PORT,
+		DatabaseDSN:     dsn,
+		SecretJWT:       []byte(os.Getenv("SECRET_JWT")),
+		ServiceHost:     SERVICE_HOST,
+		ServicePort:     SERVICE_PORT,
 		ServiceProtocol: SERVICE_PROTOCOL,
 	}, nil
 }
 
 func (s Settings) String() string {
 	result := fmt.Sprintf("Settings:\n\tServerHost:%s\n\tServerPort:%s\n\tServiceProtocol:%s\n\tDatabaseDSN:%s\n",
-			              s.ServiceHost, s.ServicePort, s.ServiceProtocol, s.DatabaseDSN)
+		s.ServiceHost, s.ServicePort, s.ServiceProtocol, s.DatabaseDSN)
 	return result
 }
 

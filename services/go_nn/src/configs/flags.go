@@ -14,7 +14,13 @@ func ParseFlags(settings *Settings) {
 	flag.Parse()
 
 	// Update settings
-	if host != "" { settings.ServiceHost = host }
-	if port != "" { settings.ServicePort = port }
-	if protocol != "" { settings.ServiceProtocol = protocol }
+	if host != "" {
+		settings.ServiceHost = host
+	}
+	if port != "" {
+		settings.ServicePort = port
+	}
+	if protocol != "" {
+		settings.ServiceProtocol = protocol
+	}
 }

@@ -7,11 +7,11 @@ import (
 )
 
 type TaskOneRequest struct {
-	TaskUID uuid.UUID `json:"taskUID"`
+	TaskUID uuid.UUID      `json:"taskUID"`
 	Image   multipart.File `json:"image"` // Файл изображения
 }
 
 type TaskOneResponse struct {
 	TaskUID string `json:"taskUID"`
-	Label string
+	Label   string
 }

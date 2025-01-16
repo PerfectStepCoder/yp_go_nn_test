@@ -7,9 +7,9 @@ option go_package = "service/nn_go";
 // TaskOneRequest - передача изображения для классификации.
 message TaskOneRequest {
   string taskUID = 1;  // UUID задачи в строковом формате
-  bytes image = 2;     // файл изображения в виде массива байтов
+  bytes image = 2;     // изображение в виде массива байтов
   int32 height = 3;    // изображения
-  int32 width = 4;      // изображения
+  int32 width = 4;     // изображения
 }
 
 // TaskOneResponse - описание ответа
@@ -18,10 +18,10 @@ message TaskOneResponse {
   string className = 2;
 }
 
-// TaskBatchRequest - передача изображения для классификации.
+// TaskBatchRequest - передача батч с изображениями для классификации.
 message TaskBatchRequest {
   string taskUID = 1;   // UUID задачи в строковом формате
-  bytes images = 2;     // файл изображения в виде массива байтов
+  repeated bytes images = 2;  // изображения в виде массива байтов
   int32 height = 3;     // изображения
   int32 width = 4;      // изображения
 }
@@ -38,3 +38,19 @@ message TaskBatchCodeResponse {
   repeated int32 classCodes = 2;  // массив кодов классов
 }
 
+// TaskOneRequest - передача изображения для классификации.
+message ServiceInfoNN {
+  string name = 1;          // имя модели нейронной сети
+  string description = 2;   // описание
+  string version = 3;       // версия
+}
+
+// TaskBatchsRequest - передача батчей с изображениями
+message TaskBatchsRequest {
+  repeated TaskBatchRequest batchs = 1;  // батчи с изображениями для классификации
+}
+
+// TaskBatchsResponse - ответы по обработке батчей с изображениями
+message TaskBatchsResponse {
+  repeated TaskBatchResponse batchs = 1; 
+}

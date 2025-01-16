@@ -33,9 +33,9 @@ func TaskOneHandler(mainStorage storage.Storage, nn *engine.OnnxNeuralNetwork) h
 		}
 
 		// Попытка извлечь файл из запроса
-		file, _, err := req.FormFile("file")  // fileHeader
+		file, _, err := req.FormFile("file") // fileHeader
 		if err != nil {
-			http.Error(res, "Did not catch the file: " + err.Error(), http.StatusBadRequest)
+			http.Error(res, "Did not catch the file: "+err.Error(), http.StatusBadRequest)
 			return
 		}
 		defer file.Close() // Закрыть файл после обработки
@@ -50,7 +50,7 @@ func TaskOneHandler(mainStorage storage.Storage, nn *engine.OnnxNeuralNetwork) h
 		//fmt.Fprintf(res, "Загружен файл: %s (размер: %d байт)\n", fileHeader.Filename, fileHeader.Size)
 
 		image, err := ImageToFloat32Matrix(file)
-		
+
 		if err != nil {
 			http.Error(res, "Did not worked ImageToFloat32Matrix", http.StatusInternalServerError)
 			return
@@ -63,10 +63,10 @@ func TaskOneHandler(mainStorage storage.Storage, nn *engine.OnnxNeuralNetwork) h
 		} else {
 			lblClassName = labelClassName[0]
 		}
-		
+
 		result := models.TaskOneResponse{
 			TaskUID: taskUID,
-			Label: lblClassName,
+			Label:   lblClassName,
 		}
 
 		// Cериализуем ответ сервера

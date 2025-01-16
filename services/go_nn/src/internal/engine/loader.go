@@ -8,7 +8,7 @@ import (
 )
 
 // LoadDataset - загрузка датасета MNIST (размер изображений 28x28)
-func LoadDataset(filename string, batchSize int) ([][][]float32, [][]int, error) {  // old ([][784]float32, []int, error) 
+func LoadDataset(filename string, batchSize int) ([][][]float32, [][]int, error) { // old ([][784]float32, []int, error)
 	// Открываем файл
 	file, err := os.Open(filename)
 	if err != nil {
@@ -46,10 +46,9 @@ func LoadDataset(filename string, batchSize int) ([][][]float32, [][]int, error)
 		images = append(images, image)
 	}
 	//fmt.Println("All images:", len(images))
-	
+
 	return batchArrayImages(images, batchSize), batchArrayLabels(labels, batchSize), nil
 }
-
 
 // batchArrayImages - функция для нарезки на батчи
 func batchArrayImages(data [][784]float32, batchSize int) [][][]float32 {
@@ -122,9 +121,9 @@ func Flatten3D(input [][][]float32) []float32 {
 func ConvertToBatchedArray(flatArray []float32, batchSize int64) ([][]float32, error) {
 
 	batchSizeInt := int(batchSize)
-	
+
 	// Проверяем, что длина массива делится на batchSize
-	if len(flatArray) % batchSizeInt != 0 {
+	if len(flatArray)%batchSizeInt != 0 {
 		return nil, fmt.Errorf("длина массива %d не делится на batchSize %d", len(flatArray), batchSizeInt)
 	}
 

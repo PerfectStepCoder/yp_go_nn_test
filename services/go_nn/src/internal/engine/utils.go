@@ -2,8 +2,9 @@ package engine
 
 import (
 	"bytes"
-	"fmt"
 	"encoding/binary"
+	"fmt"
+
 	//"errors"
 	"math"
 )
@@ -32,8 +33,12 @@ func FindMaxIndices(labels [][]float32) []int {
 	return maxIndices
 }
 
+type Integer interface {
+	~int | ~int8 | ~int16 | ~int32 | ~int64 | ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64
+}
+
 // Функция для сравнения двух массивов
-func CompareArrays(arr1, arr2 []int) bool {
+func CompareArrays[T Integer](arr1, arr2 []T) bool {
 	// Проверяем, что массивы одинаковой длины
 	if len(arr1) != len(arr2) {
 		return false
@@ -50,7 +55,7 @@ func CompareArrays(arr1, arr2 []int) bool {
 }
 
 // Функция для подсчета процента совпадений
-func CalculateMatchPercentage(arr1, arr2 []int) float64 {
+func CalculateMatchPercentage[T Integer](arr1, arr2 []T) float64 {
 	// Проверяем, что массивы одинаковой длины
 	if len(arr1) != len(arr2) {
 		return 0 // Если массивы разной длины, процент совпадений невозможен
@@ -103,9 +108,9 @@ func BytesToFloat32Matrix(data []byte, rows, cols int) ([][]float32, error) {
 	// Читаем данные из []byte
 	for i := 0; i < rows; i++ {
 		for j := 0; j < cols; j++ {
-			offset := (i*cols + j) * 4 // Смещение для текущего элемента
-			uintValue := binary.LittleEndian.Uint32(data[offset : offset+4])  // Читаем uint32
-			matrix[i][j] = math.Float32frombits(uintValue)                    // Преобразуем uint32 в float32
+			offset := (i*cols + j) * 4                                       // Смещение для текущего элемента
+			uintValue := binary.LittleEndian.Uint32(data[offset : offset+4]) // Читаем uint32
+			matrix[i][j] = math.Float32frombits(uintValue)                   // Преобразуем uint32 в float32
 		}
 	}
 
@@ -119,4 +124,83 @@ func GetMatrixSize(matrix [][]float32) (rows, cols int) {
 		cols = len(matrix[0]) // Количество столбцов — это длина первой строки
 	}
 	return rows, cols
+}
+
+// GetFirstImage из массива извлекает только первое изображение
+func GetFirstImage(input [][]float32) [][]float32 {
+
+	// Проверяем, что input содержит хотя бы одну строку
+	if len(input) == 0 {
+		return [][]float32{} // Возвращаем пустой массив, если input пуст
+	}
+
+	// Вычисляем ширину (количество столбцов)
+	width := len(input[0])
+
+	// Создаем массив [][]float32 с динамической длиной строки
+	var output [][]float32 = make([][]float32, 1)
+	output[0] = make([]float32, width)
+
+	// Копируем данные из первой строки input в output
+	for i := 0; i < width; i++ {
+		output[0][i] = input[0][i]
+	}
+
+	return output
+}
+
+// BytesToFloat32Slice - массив []bytes -> []float32
+func BytesToFloat32Slice(data []byte) ([]float32, error) {
+	// Длина массива float32
+	if len(data)%4 != 0 {
+		return nil, fmt.Errorf("invalid byte slice length: %d (must be multiple of 4)", len(data))
+	}
+
+	// Вычисляем длину результирующего массива
+	numFloats := len(data) / 4
+	result := make([]float32, numFloats)
+
+	// Чтение данных
+	buf := bytes.NewReader(data)
+	for i := 0; i < numFloats; i++ {
+		var f float32
+		err := binary.Read(buf, binary.LittleEndian, &f)
+		if err != nil {
+			return nil, err
+		}
+		result[i] = f
+	}
+	return result, nil
+}
+
+func IntToInt32Slice(input []int) []int32 {
+	// Создаем массив []int32 с той же длиной
+	result := make([]int32, len(input))
+
+	// Копируем элементы с явным преобразованием
+	for i, v := range input {
+		result[i] = int32(v)
+	}
+
+	return result
+}
+
+func Float32ToBytes2D(input [][]float32) ([][]byte, error) {
+	// Создаём выходной массив [][]byte с такой же структурой
+	output := make([][]byte, len(input))
+
+	for i, row := range input {
+		// Создаём срез []byte для каждой строки
+		rowBytes := new(bytes.Buffer)
+		for _, value := range row {
+			// Записываем float32 в байты
+			err := binary.Write(rowBytes, binary.LittleEndian, value)
+			if err != nil {
+				return nil, err
+			}
+		}
+		output[i] = rowBytes.Bytes()
+	}
+
+	return output, nil
 }

@@ -12,7 +12,7 @@ from train import train
 batch_size = 64
 epochs = 5
 learning_rate = 0.001
-onnx_file_path = "yolo_fashion_mnist.onnx"
+onnx_file_path = "/Users/dmitrii/EducationProjects/yp_go_nn/services/go_nn/src/models/yolo_fashion_mnist.onnx"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Device: {device}")
 

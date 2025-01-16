@@ -143,6 +143,9 @@ example.proto: Имя файла .proto, который вы хотите обр
 
 <summary>Запуск сервисов</summary>
 
+Внимание!!!
+Для запуска нужны файлы: дамп нейросети, библиотека распакомки состояний нейросети в формате onnx, тестовый датасет. Всего этого нет в репозитории. Обратитесь к разработчику.
+
 #### Запуск сервиса (Python)
 Установка ultralytics
 ```Python
@@ -166,6 +169,12 @@ go run main.go reporter.go settings.go menu.go
 <summary>Запуск тестов</summary>
 
 #### Запуск тестов для сервиса на Go
+
+Внимание!!!
+Для выполнения тестов нужны файлы: дамп нейросети, библиотека распакомки состояний нейросети в формате onnx, тестовый датасет. Всего этого нет в репозитории, но я локально выполнил тесты и разместил результаты покрытия тестами в файлы:
+- coverage.out
+- coverage.html (этот файл можно открыть в браузере для просмотра)
+
 ```Go
 go test ./...
 go test ./services/go_nn/src/... -coverprofile=coverage.out
@@ -173,7 +182,7 @@ go test ./services/go_nn/src/... -coverprofile=coverage.out
 ### Выводим отчет о покрытие тестами кода
 ```Go
 go test ./... -coverprofile=coverage.out
-go tool cover -html=cover.out -o coverage.html
+go tool cover -html=coverage.out -o coverage.html
 ```
 
 </details>

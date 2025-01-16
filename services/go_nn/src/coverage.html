@@ -1,0 +1,3387 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>irest: Go Coverage Report</title>
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">github.com/PerfectStepCoder/yp_go_nn/src/api/irest/auth.go (0.0%)</option>
+				
+				<option value="file1">github.com/PerfectStepCoder/yp_go_nn/src/api/irest/docs/docs.go (100.0%)</option>
+				
+				<option value="file2">github.com/PerfectStepCoder/yp_go_nn/src/api/irest/helpers.go (0.0%)</option>
+				
+				<option value="file3">github.com/PerfectStepCoder/yp_go_nn/src/api/irest/middlewares.go (0.0%)</option>
+				
+				<option value="file4">github.com/PerfectStepCoder/yp_go_nn/src/api/irest/operators.go (0.0%)</option>
+				
+				<option value="file5">github.com/PerfectStepCoder/yp_go_nn/src/api/irest/tasks.go (0.0%)</option>
+				
+				<option value="file6">github.com/PerfectStepCoder/yp_go_nn/src/cmd/console/main.go (0.0%)</option>
+				
+				<option value="file7">github.com/PerfectStepCoder/yp_go_nn/src/cmd/main.go (0.0%)</option>
+				
+				<option value="file8">github.com/PerfectStepCoder/yp_go_nn/src/cmd/test_reporter/main.go (0.0%)</option>
+				
+				<option value="file9">github.com/PerfectStepCoder/yp_go_nn/src/cmd/test_reporter/menu.go (0.0%)</option>
+				
+				<option value="file10">github.com/PerfectStepCoder/yp_go_nn/src/cmd/test_reporter/reporter.go (0.0%)</option>
+				
+				<option value="file11">github.com/PerfectStepCoder/yp_go_nn/src/cmd/test_reporter/settings.go (0.0%)</option>
+				
+				<option value="file12">github.com/PerfectStepCoder/yp_go_nn/src/configs/flags.go (0.0%)</option>
+				
+				<option value="file13">github.com/PerfectStepCoder/yp_go_nn/src/configs/logging.go (0.0%)</option>
+				
+				<option value="file14">github.com/PerfectStepCoder/yp_go_nn/src/configs/settings.go (83.3%)</option>
+				
+				<option value="file15">github.com/PerfectStepCoder/yp_go_nn/src/internal/engine/loader.go (77.8%)</option>
+				
+				<option value="file16">github.com/PerfectStepCoder/yp_go_nn/src/internal/engine/mnist.go (0.0%)</option>
+				
+				<option value="file17">github.com/PerfectStepCoder/yp_go_nn/src/internal/engine/nn.go (70.6%)</option>
+				
+				<option value="file18">github.com/PerfectStepCoder/yp_go_nn/src/internal/engine/utils.go (49.4%)</option>
+				
+				<option value="file19">github.com/PerfectStepCoder/yp_go_nn/src/internal/models/operator.go (0.0%)</option>
+				
+				<option value="file20">github.com/PerfectStepCoder/yp_go_nn/src/internal/proto/gen/models.pb.go (5.2%)</option>
+				
+				<option value="file21">github.com/PerfectStepCoder/yp_go_nn/src/internal/proto/gen/server.pb.go (90.0%)</option>
+				
+				<option value="file22">github.com/PerfectStepCoder/yp_go_nn/src/internal/proto/gen/server_grpc.pb.go (0.0%)</option>
+				
+				<option value="file23">github.com/PerfectStepCoder/yp_go_nn/src/internal/security/passwords.go (0.0%)</option>
+				
+				<option value="file24">github.com/PerfectStepCoder/yp_go_nn/src/internal/security/tokens.go (0.0%)</option>
+				
+				<option value="file25">github.com/PerfectStepCoder/yp_go_nn/src/internal/servers/grpcServer.go (17.4%)</option>
+				
+				<option value="file26">github.com/PerfectStepCoder/yp_go_nn/src/internal/servers/httpServer.go (0.0%)</option>
+				
+				<option value="file27">github.com/PerfectStepCoder/yp_go_nn/src/internal/storage/database.go (0.0%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">not covered</span>
+				<span class="cov8">covered</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">package httpp // http protocol
+
+import (
+        "encoding/json"
+        "net/http"
+
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/models"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/storage"
+
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/security"
+)
+
+// RegisterHandler handles operator registration
+// @Summary      Register a new operator
+// @Description  Register a new operator with name and password
+// @Tags         Auth
+// @Accept       json
+// @Produce      json
+// @Param        user  body  models.OperatorRequest true  "Operator data" example({"name": "john_doe", "password": "securepassword"})
+// @Success      201   body  models.UserResponseUID true "Operator created"
+// @Failure      400  {string}  string  "Invalid input"
+// @Failure      409  {string}  string  "Operator already exists"
+// @Router       /register [post]
+func RegisterHandler(mainStorage storage.Storage) http.HandlerFunc <span class="cov0" title="0">{
+        return func(res http.ResponseWriter, req *http.Request) </span><span class="cov0" title="0">{
+                var operator models.Operator
+                if err := json.NewDecoder(req.Body).Decode(&amp;operator); err != nil </span><span class="cov0" title="0">{
+                        http.Error(res, "Invalid input", http.StatusBadRequest)
+                        return
+                }</span>
+
+                <span class="cov0" title="0">if hashed, hashErr := security.HashPassword(operator.Password); hashErr == nil </span><span class="cov0" title="0">{
+                        operator.Password = hashed
+                }</span>
+
+                <span class="cov0" title="0">if _, err := mainStorage.CreateOperator(&amp;operator); err != nil </span><span class="cov0" title="0">{
+                        if err.Error() == "UNIQUE constraint failed: users.username, users.email" </span><span class="cov0" title="0">{
+                                http.Error(res, "User already exists", http.StatusConflict)
+                        }</span> else<span class="cov0" title="0"> {
+                                http.Error(res, "Failed to create user", http.StatusInternalServerError)
+                        }</span>
+                        <span class="cov0" title="0">return</span>
+                }
+
+                <span class="cov0" title="0">result := models.OperatorResponseUID{
+                        OperatorUID: operator.OperatorUID.String(),
+                }
+
+                // Cериализуем ответ сервера
+                jsonResp, err := json.Marshal(result)
+                if err != nil </span><span class="cov0" title="0">{
+                        http.Error(res, "Error writing response", http.StatusInternalServerError)
+                        return
+                }</span>
+                <span class="cov0" title="0">res.Write(jsonResp)
+
+                res.WriteHeader(http.StatusCreated)</span>
+        }
+}
+
+// LoginHandler аутентифицирует пользователя и возвращает JWT токен
+// @Summary      Login a operator
+// @Description  Authenticate operator and return JWT token
+// @Tags         Auth
+// @Accept       json
+// @Produce      json
+// @Param        login  body  models.LoginRequest  true  "Login credentials"
+// @Success      200  {object}  models.LoginResponse  "JWT Token"
+// @Failure      400  {string}  string  "Invalid input"
+// @Failure      401  {string}  string  "Invalid credentials"
+// @Router       /login [post]
+func LoginHandler(mainStorage storage.Storage) http.HandlerFunc <span class="cov0" title="0">{
+        return func(w http.ResponseWriter, r *http.Request) </span><span class="cov0" title="0">{
+                var req models.LoginRequest
+                if err := json.NewDecoder(r.Body).Decode(&amp;req); err != nil </span><span class="cov0" title="0">{
+                        http.Error(w, "Invalid input", http.StatusBadRequest)
+                        return
+                }</span>
+
+                // Получаем пользователя из базы данных
+                <span class="cov0" title="0">operator, err := mainStorage.GetOperatorByName(req.Name)
+                if err != nil || !security.CheckPassword(operator.Password, req.Password) </span><span class="cov0" title="0">{
+                        http.Error(w, "Invalid credentials", http.StatusUnauthorized)
+                        return
+                }</span>
+
+                // Генерация JWT токена
+                <span class="cov0" title="0">token, err := security.GenerateJWT(operator)
+                if err != nil </span><span class="cov0" title="0">{
+                        http.Error(w, "Could not generate token", http.StatusInternalServerError)
+                        return
+                }</span>
+
+                // Возвращаем токен в ответе
+                <span class="cov0" title="0">w.Header().Set("Content-Type", "application/json")
+                json.NewEncoder(w).Encode(models.LoginResponse{Token: token})
+                w.WriteHeader(http.StatusOK)</span>
+        }
+}
+</pre>
+		
+		<pre class="file" id="file1" style="display: none">// Package docs Code generated by swaggo/swag. DO NOT EDIT
+package docs
+
+import "github.com/swaggo/swag"
+
+const docTemplate = `{
+    "schemes": {{ marshal .Schemes }},
+    "swagger": "2.0",
+    "info": {
+        "description": "{{escape .Description}}",
+        "title": "{{.Title}}",
+        "contact": {},
+        "version": "{{.Version}}"
+    },
+    "host": "{{.Host}}",
+    "basePath": "{{.BasePath}}",
+    "paths": {
+        "/login": {
+            "post": {
+                "description": "Authenticate operator and return JWT token",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login a operator",
+                "parameters": [
+                    {
+                        "description": "Login credentials",
+                        "name": "login",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.LoginRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JWT Token",
+                        "schema": {
+                            "$ref": "#/definitions/models.LoginResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid input",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "Invalid credentials",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/operators/id/{operatorUID}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get operator",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Operators"
+                ],
+                "summary": "Get operator by UID",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Operator UID",
+                        "name": "operatorUID",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operator",
+                        "schema": {
+                            "type": "body"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "404": {
+                        "description": "Operator not found",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/operators/name/{name}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Get operator",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Operators"
+                ],
+                "summary": "Get operator by Name",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Operator name",
+                        "name": "name",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operator",
+                        "schema": {
+                            "type": "body"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "404": {
+                        "description": "Operator not found",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "description": "Register a new operator with name and password",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register a new operator",
+                "parameters": [
+                    {
+                        "description": "Operator data",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.OperatorRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Operator created",
+                        "schema": {
+                            "type": "body"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid input",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "409": {
+                        "description": "Operator already exists",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/tasks/one": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Create Task with one image",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Tasks"
+                ],
+                "summary": "Task",
+                "parameters": [
+                    {
+                        "type": "file",
+                        "description": "File image",
+                        "name": "file",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "UUID of the task",
+                        "name": "taskUID",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Task one image",
+                        "schema": {
+                            "type": "body"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.LoginRequest": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.LoginResponse": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OperatorRequest": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "BearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}`
+
+// SwaggerInfo holds exported Swagger Info so clients can modify it
+var SwaggerInfo = &amp;swag.Spec{
+        Version:          "1.0",
+        Host:             "",
+        BasePath:         "",
+        Schemes:          []string{},
+        Title:            "Нейросети API",
+        Description:      "Нейронные сети по детекции объектов на изображениях",
+        InfoInstanceName: "swagger",
+        SwaggerTemplate:  docTemplate,
+}
+
+func init() <span class="cov8" title="1">{
+        swag.Register(SwaggerInfo.InstanceName(), SwaggerInfo)
+}</span>
+</pre>
+		
+		<pre class="file" id="file2" style="display: none">package httpp
+
+import (
+        "fmt"
+        "image"
+        "image/color"
+        _ "image/jpeg"
+        _ "image/png"
+        "mime/multipart"
+)
+
+// ImageToFloat32Matrix - функция для нормализации пикселей в диапазоне [-1, 1]
+func ImageToFloat32Matrix(file multipart.File) ([][]float32, error) <span class="cov0" title="0">{
+        // Декодируем изображение из файла
+        img, _, err := image.Decode(file)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("ошибка декодирования изображения: %w", err)
+        }</span>
+
+        // Преобразуем изображение в grayscale (или используем цветное, если нужно)
+        <span class="cov0" title="0">bounds := img.Bounds()
+        grayImg := image.NewGray(bounds) // Создаём новое grayscale изображение
+
+        width, height := bounds.Dx(), bounds.Dy()
+        matrix := make([][]float32, height)
+
+        for y := 0; y &lt; height; y++ </span><span class="cov0" title="0">{
+                matrix[y] = make([]float32, width)
+                for x := 0; x &lt; width; x++ </span><span class="cov0" title="0">{
+                        // Получаем цвет пикселя
+                        pixel := grayImg.At(x, y)
+
+                        // Преобразуем в яркость (grayscale)
+                        gray := color.GrayModel.Convert(pixel).(color.Gray)
+
+                        // Нормализуем в диапазон [-1, 1]
+                        normalized := float32(gray.Y)/127.5 - 1
+
+                        // Заполняем матрицу
+                        matrix[y][x] = normalized
+                }</span>
+        }
+
+        <span class="cov0" title="0">return matrix, nil</span>
+}
+
+func getSize(input [][]float32) (height int, width int) <span class="cov0" title="0">{
+        // Вычисляем высоту и ширину
+        height = len(input) // Количество строк
+        width = 0
+        if height &gt; 0 </span><span class="cov0" title="0">{
+                width = len(input[0]) // Количество столбцов в первой строке
+        }</span>
+        <span class="cov0" title="0">return height, width</span>
+}
+
+// Функция для преобразования [A][B]float32 в [1][AxB]float32
+func ReshapeTo1xN(input [][]float32) [][]float32 <span class="cov0" title="0">{
+
+        height, width := getSize(input)
+
+        output := make([][]float32, 1)
+        output[0] = make([]float32, height*width)
+
+        index := 0
+
+        // Копируем элементы построчно
+        for i := 0; i &lt; height; i++ </span><span class="cov0" title="0">{
+                for j := 0; j &lt; width; j++ </span><span class="cov0" title="0">{
+                        output[0][index] = input[i][j]
+                        index++
+                }</span>
+        }
+
+        <span class="cov0" title="0">return output</span>
+}
+</pre>
+		
+		<pre class="file" id="file3" style="display: none">package httpp // http protocol
+
+import (
+        "context"
+        "fmt"
+        "github.com/PerfectStepCoder/yp_go_nn/src/configs"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/security"
+        "github.com/golang-jwt/jwt/v4"
+        "net/http"
+        "strings"
+)
+
+// ContextKey тип для ключей в контексте, чтобы избежать конфликтов
+type ContextKey string
+
+const OperatorKey ContextKey = "user"
+
+// JWTMiddleware валидирует JWT токен и передает данные пользователя в контекст
+func JWTMiddleware(next http.Handler) http.Handler <span class="cov0" title="0">{
+        return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) </span><span class="cov0" title="0">{
+                // Извлечение токена из заголовка Authorization
+                authHeader := r.Header.Get("Authorization")
+                if authHeader == "" </span><span class="cov0" title="0">{
+                        http.Error(w, "Authorization header is required", http.StatusUnauthorized)
+                        return
+                }</span>
+
+                // Ожидаем токен в формате: "Bearer &lt;token&gt;"
+                <span class="cov0" title="0">tokenString := strings.TrimPrefix(authHeader, "Bearer ")
+
+                // Проверка и валидация токена
+                claims := &amp;jwt.MapClaims{}
+                token, err := jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (interface{}, error) </span><span class="cov0" title="0">{
+                        // Проверка метода подписи
+                        if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok </span><span class="cov0" title="0">{
+                                return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+                        }</span>
+                        <span class="cov0" title="0">return configs.SettingsGlobal.SecretJWT, nil</span>
+                })
+
+                <span class="cov0" title="0">if err != nil || !token.Valid </span><span class="cov0" title="0">{
+                        http.Error(w, "Invalid token", http.StatusUnauthorized)
+                        return
+                }</span>
+
+                // Извлечение данных пользователя из токена
+                <span class="cov0" title="0">user, err := security.ExtractUserFromClaims(claims)
+                if err != nil </span><span class="cov0" title="0">{
+                        http.Error(w, "Failed to extract user from token", http.StatusInternalServerError)
+                        return
+                }</span>
+
+                // Передача данных пользователя в контекст
+                <span class="cov0" title="0">ctx := context.WithValue(r.Context(), OperatorKey, user)
+                next.ServeHTTP(w, r.WithContext(ctx))</span>
+        })
+}
+</pre>
+		
+		<pre class="file" id="file4" style="display: none">package httpp // http protocol
+
+import (
+        "encoding/json"
+        "net/http"
+
+        //"github.com/PerfectStepCoder/yp_go_nn/src/internal/models"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/security"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/storage"
+        "github.com/go-chi/chi/v5"
+)
+
+// @Summary      Get operator by UID
+// @Description  Get operator
+// @Tags         Operators
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        operatorUID   path      string  true  "Operator UID"
+// @Success      200   body  models.Operator true "Operator"
+// @Failure      401  {string}  string  "Unauthorized"
+// @Failure      404  {string}  string  "Operator not found"
+// @Router       /operators/id/{operatorUID} [get]
+func GetOperatorByUIDHandler(mainStorage storage.Storage) http.HandlerFunc <span class="cov0" title="0">{
+        return func(res http.ResponseWriter, req *http.Request) </span><span class="cov0" title="0">{
+                // Извлечение пользователя из контекста
+                _, ok := req.Context().Value(OperatorKey).(*security.OperatorJWT)
+                if !ok </span><span class="cov0" title="0">{
+                        http.Error(res, "Operator not found in context", http.StatusUnauthorized)
+                        return
+                }</span>
+
+                // Извлечение параметра operatorUID из URL
+                <span class="cov0" title="0">operatorUID := chi.URLParam(req, "operatorUID")
+
+                if operatorUID == "" </span><span class="cov0" title="0">{
+                        http.Error(res, "operatorUID is required", http.StatusBadRequest)
+                        return
+                }</span>
+
+                <span class="cov0" title="0">result, err := mainStorage.GetOperatorByUID(operatorUID)
+                if err != nil </span><span class="cov0" title="0">{
+                        http.Error(res, "Operator not found", http.StatusNotFound)
+                        return
+                }</span>
+                // Cериализуем ответ сервера
+                <span class="cov0" title="0">jsonResp, err := json.Marshal(result)
+                if err != nil </span><span class="cov0" title="0">{
+                        http.Error(res, "Error writing response", http.StatusInternalServerError)
+                        return
+                }</span>
+
+                <span class="cov0" title="0">res.Write(jsonResp)
+
+                res.WriteHeader(http.StatusOK)</span>
+
+        }
+}
+
+// @Summary      Get operator by Name
+// @Description  Get operator
+// @Tags         Operators
+// @Accept       json
+// @Produce      json
+// @Security     BearerAuth
+// @Param        name   path      string  true  "Operator name"
+// @Success      200   body  models.Operator true "Operator"
+// @Failure      401  {string}  string  "Unauthorized"
+// @Failure      404  {string}  string  "Operator not found"
+// @Router       /operators/name/{name} [get]
+func GetOperatorByNameHandler(mainStorage storage.Storage) http.HandlerFunc <span class="cov0" title="0">{
+        return func(res http.ResponseWriter, req *http.Request) </span><span class="cov0" title="0">{
+                // Извлечение пользователя из контекста
+                _, ok := req.Context().Value(OperatorKey).(*security.OperatorJWT)
+                if !ok </span><span class="cov0" title="0">{
+                        http.Error(res, "Operator not found in context", http.StatusUnauthorized)
+                        return
+                }</span>
+
+                // Извлечение параметра name из URL
+                <span class="cov0" title="0">name := chi.URLParam(req, "name")
+
+                if name == "" </span><span class="cov0" title="0">{
+                        http.Error(res, "Name is required", http.StatusBadRequest)
+                        return
+                }</span>
+
+                <span class="cov0" title="0">result, err := mainStorage.GetOperatorByName(name)
+                if err != nil </span><span class="cov0" title="0">{
+                        http.Error(res, "Operator not found", http.StatusNotFound)
+                        return
+                }</span>
+                // Cериализуем ответ сервера
+                <span class="cov0" title="0">jsonResp, err := json.Marshal(result)
+                if err != nil </span><span class="cov0" title="0">{
+                        http.Error(res, "Error writing response", http.StatusInternalServerError)
+                        return
+                }</span>
+
+                <span class="cov0" title="0">res.Write(jsonResp)
+
+                res.WriteHeader(http.StatusOK)</span>
+
+        }
+}
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package httpp // http protocol
+
+import (
+        "encoding/json"
+        "net/http"
+
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
+
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/models"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/security"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/storage"
+        //"github.com/go-chi/chi/v5"
+)
+
+// @Summary      Task
+// @Description  Create Task with one image
+// @Tags         Tasks
+// @Accept       multipart/form-data
+// @Produce      json
+// @Security     BearerAuth
+// @Param        file formData file true "File image"
+// @Param        taskUID formData string true "UUID of the task"
+// @Success      200   body  models.TaskOneResponse true "Task one image"
+// @Failure      401  {string}  string  "Unauthorized"
+// @Router       /tasks/one  [post]
+func TaskOneHandler(mainStorage storage.Storage, nn *engine.OnnxNeuralNetwork) http.HandlerFunc <span class="cov0" title="0">{
+        return func(res http.ResponseWriter, req *http.Request) </span><span class="cov0" title="0">{
+                // Извлечение пользователя из контекста
+                _, ok := req.Context().Value(OperatorKey).(*security.OperatorJWT)
+                if !ok </span><span class="cov0" title="0">{
+                        http.Error(res, "Operator not found in context", http.StatusUnauthorized)
+                        return
+                }</span>
+
+                // Попытка извлечь файл из запроса
+                <span class="cov0" title="0">file, _, err := req.FormFile("file") // fileHeader
+                if err != nil </span><span class="cov0" title="0">{
+                        http.Error(res, "Did not catch the file: "+err.Error(), http.StatusBadRequest)
+                        return
+                }</span>
+                <span class="cov0" title="0">defer file.Close() // Закрыть файл после обработки
+
+                taskUID := req.FormValue("taskUID")
+                if taskUID == "" </span><span class="cov0" title="0">{
+                        http.Error(res, "Missing taskUID parameter", http.StatusBadRequest)
+                        return
+                }</span>
+
+                // Вывод информации о загруженном файле
+                //fmt.Fprintf(res, "Загружен файл: %s (размер: %d байт)\n", fileHeader.Filename, fileHeader.Size)
+
+                <span class="cov0" title="0">image, err := ImageToFloat32Matrix(file)
+
+                if err != nil </span><span class="cov0" title="0">{
+                        http.Error(res, "Did not worked ImageToFloat32Matrix", http.StatusInternalServerError)
+                        return
+                }</span>
+
+                <span class="cov0" title="0">var lblClassName string
+                if labelClassName, err := nn.Detect(ReshapeTo1xN(image)); err != nil </span><span class="cov0" title="0">{
+                        http.Error(res, "Did not worked Neural Network", http.StatusInternalServerError)
+                        return
+                }</span> else<span class="cov0" title="0"> {
+                        lblClassName = labelClassName[0]
+                }</span>
+
+                <span class="cov0" title="0">result := models.TaskOneResponse{
+                        TaskUID: taskUID,
+                        Label:   lblClassName,
+                }
+
+                // Cериализуем ответ сервера
+                jsonResp, err := json.Marshal(result)
+                if err != nil </span><span class="cov0" title="0">{
+                        http.Error(res, "Error writing response", http.StatusInternalServerError)
+                        return
+                }</span>
+
+                <span class="cov0" title="0">res.Write(jsonResp)
+
+                res.WriteHeader(http.StatusOK)</span>
+        }
+}
+</pre>
+		
+		<pre class="file" id="file6" style="display: none">package main
+
+import (
+        "fmt"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
+)
+
+func main() <span class="cov0" title="0">{
+
+        inputLayer := engine.NeuralLayer{
+                Name:  "input",
+                Shape: []int64{1, 28, 28},
+        }
+        outputLayer := engine.NeuralLayer{
+                Name:  "output",
+                Shape: []int64{10},
+        }
+
+        nn := engine.NewOnnxNeuralNetwork("../models/yolo_fashion_mnist.onnx",
+                "../lib/libonnxruntime.1.20.1.dylib", inputLayer, outputLayer)
+
+        // Загрузка датасета
+        images, labels, err1 := engine.LoadDataset("../../datasets/fashion_mnist_test.csv", 105) // labels
+
+        if err1 != nil </span><span class="cov0" title="0">{
+                fmt.Printf("Ошибка загрузки датасета: %v\n", err1)
+                return
+        }</span>
+
+        <span class="cov0" title="0">for i, image_batch := range images </span><span class="cov0" title="0">{
+
+                classCode, _ := nn.DetectCode(image_batch)
+
+                fmt.Println(engine.CalculateMatchPercentage(labels[i], classCode))
+
+                // if engine.CompareArrays(labels[i], classCode) == false {
+                //         fmt.Println("Not match!")
+                // }
+                // break
+                //fmt.Println(nn.DetectCode(image_batch))
+        }</span>
+        <span class="cov0" title="0">fmt.Println("Done")</span>
+}
+</pre>
+		
+		<pre class="file" id="file7" style="display: none">// @title           Нейросети API
+// @version         1.0
+// @description     Нейронные сети по детекции объектов на изображениях
+// @securityDefinitions.apikey BearerAuth
+// @in header
+// @name Authorization
+package main
+
+import (
+        "context"
+        "fmt"
+        "log"
+        "os"
+        "os/signal"
+        "syscall"
+        "time"
+
+        "github.com/PerfectStepCoder/yp_go_nn/src/configs"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/servers"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/storage"
+)
+
+var settings = configs.SettingsGlobal
+
+func main() <span class="cov0" title="0">{
+
+        configs.ParseFlags(settings)
+        fmt.Println(settings)
+
+        // Storage
+        mainStorage, errStorage := storage.NewStorageInPostgres(settings.DatabaseDSN)
+        if errStorage != nil </span><span class="cov0" title="0">{
+                log.Printf("data base doesnt work! Error: %s", errStorage)
+                return
+        }</span>
+        <span class="cov0" title="0">defer mainStorage.Close()
+
+        // NeuralNetwork
+        inputLayer := engine.NeuralLayer{
+                Name:  "input",
+                Shape: []int64{1, 28, 28},
+        }
+        outputLayer := engine.NeuralLayer{
+                Name:  "output",
+                Shape: []int64{10},
+        }
+
+        nn := engine.NewOnnxNeuralNetwork("../models/yolo_fashion_mnist.onnx",
+                "../lib/libonnxruntime.1.20.1.dylib", inputLayer, outputLayer)
+
+        // Канал для получения системных сигналов (например, SIGINT, SIGTERM)
+        signalChan := make(chan os.Signal, 1)
+        signal.Notify(signalChan, os.Interrupt, syscall.SIGTERM)
+
+        var server servers.Server = nil
+        var serverErr error
+
+        switch settings.ServiceProtocol </span>{
+        case "http":<span class="cov0" title="0">
+                server, serverErr = servers.NewHTTPServer(mainStorage, nn)</span>
+        case "grpc":<span class="cov0" title="0">
+                server, serverErr = servers.NewServerGRPC(nn)</span>
+        default:<span class="cov0" title="0">
+                log.Fatalf("Not support protocol: %s", settings.ServiceProtocol)</span>
+        }
+
+        <span class="cov0" title="0">if serverErr != nil </span><span class="cov0" title="0">{
+                log.Fatalf("Failed to create server: %v", serverErr)
+        }</span>
+
+        <span class="cov0" title="0">log.Printf("Service is starting host: %s, port: %s", settings.ServiceHost, settings.ServicePort)
+        serverErr = server.Start(fmt.Sprintf("%s:%s", settings.ServiceHost, settings.ServicePort))
+
+        if serverErr != nil </span><span class="cov0" title="0">{
+                log.Fatalf("Failed to start server: %v", serverErr)
+        }</span>
+
+        // Блокировка до получения сигнала
+        <span class="cov0" title="0">sig := &lt;-signalChan
+        log.Printf("Singal: %v. Shutdown server ...\n", sig)
+        // Контекст с таймаутом для graceful shutdown (5 секунд)
+        ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+        defer cancel()
+
+        // Завершаем сервер, даем время для завершения активных запросов
+        if err := server.Stop(ctx); err != nil </span><span class="cov0" title="0">{
+                configs.Logger.Fatalf("failed to stop server: %v\n", err)
+        }</span>
+
+        <span class="cov0" title="0">log.Printf("Service shutdown successfully")</span>
+}
+</pre>
+		
+		<pre class="file" id="file8" style="display: none">package main
+
+import (
+        "fmt"
+        "log"
+
+        // "context"
+        // "os"
+        // "os/signal"
+        // "syscall"
+        // "time"
+
+        // "github.com/PerfectStepCoder/yp_go_nn/src/internal/storage"
+        // "github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
+
+        pb "github.com/PerfectStepCoder/yp_go_nn/src/internal/proto/gen"
+        "google.golang.org/grpc"
+        "google.golang.org/grpc/credentials/insecure"
+)
+
+var setting, _ = NewSettings()
+
+func main() <span class="cov0" title="0">{
+
+        fmt.Println(setting)
+
+        // Устанавливаем соединение с сервером
+        connOne, errOne := grpc.NewClient(fmt.Sprintf("%s:%s", setting.ServiceHostOne, setting.ServicePortOne),
+                grpc.WithTransportCredentials(insecure.NewCredentials()))
+        if errOne != nil </span><span class="cov0" title="0">{
+                log.Fatal(errOne)
+        }</span>
+        <span class="cov0" title="0">defer connOne.Close()
+
+        connTwo, errTwo := grpc.NewClient(fmt.Sprintf("%s:%s", setting.ServiceHostTwo, setting.ServicePortTwo),
+                grpc.WithTransportCredentials(insecure.NewCredentials()))
+        if errTwo != nil </span><span class="cov0" title="0">{
+                log.Fatal(errTwo)
+        }</span>
+        <span class="cov0" title="0">defer connTwo.Close()
+
+        // Получаем переменную интерфейсного типа ClassifyNNClient, через которую будем отправлять сообщения
+        connectorOne := pb.NewClassifyNNClient(connOne)
+        connectorTwo := pb.NewClassifyNNClient(connTwo)
+
+        // Функция для выполнения тестирования
+        startReporters(connectorOne, connectorTwo)</span>
+
+}
+</pre>
+		
+		<pre class="file" id="file9" style="display: none">package main
+
+import (
+        "bufio"
+        "fmt"
+        pb "github.com/PerfectStepCoder/yp_go_nn/src/internal/proto/gen"
+        "os"
+)
+
+func startReporters(connectorOne pb.ClassifyNNClient, connectorTwo pb.ClassifyNNClient) <span class="cov0" title="0">{
+
+        scanner := bufio.NewScanner(os.Stdin)
+
+        for </span><span class="cov0" title="0">{
+
+                fmt.Print("Введите номер команды:\n",
+                        "\t0-выход\n",
+                        "\t1-сравнение идентичности работы двух сервисов\n",
+                        "\t2-работа сервиса для одного изображения\n",
+                        "\t3-производительность сервиса\n",
+                )
+
+                if !scanner.Scan() </span><span class="cov0" title="0">{
+                        break</span>
+                }
+                <span class="cov0" title="0">input := scanner.Text()
+
+                if input == "0" </span><span class="cov0" title="0">{
+                        break</span>
+                }
+
+                <span class="cov0" title="0">switch input </span>{
+                case "1":<span class="cov0" title="0">
+                        DoReportCompareBatch(connectorOne, connectorTwo)
+                        continue</span>
+                case "2":<span class="cov0" title="0">
+                        DoReportSolo(connectorOne)
+                        continue</span>
+                case "3":<span class="cov0" title="0">
+                        DoReportPerformance(connectorTwo)
+                        continue</span>
+                default:<span class="cov0" title="0">
+                        fmt.Println("Команда не распознана")
+                        continue</span>
+                }
+        }
+        <span class="cov0" title="0">fmt.Println("Завершение работы утилиты")</span>
+}
+</pre>
+		
+		<pre class="file" id="file10" style="display: none">package main
+
+import (
+        "context"
+        "fmt"
+
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
+        pb "github.com/PerfectStepCoder/yp_go_nn/src/internal/proto/gen"
+        "github.com/google/uuid"
+        "google.golang.org/protobuf/types/known/emptypb"
+)
+
+// DoReportSolo - отправляет одно изображение одной нейронной сети
+func DoReportSolo(c pb.ClassifyNNClient) <span class="cov0" title="0">{
+
+        // Загрузка датасета
+        batchSize := 200
+        images, _, err := engine.LoadDataset("../../../../../data/datasets/fashion_mnist_test.csv", batchSize) // labels
+
+        if err != nil </span><span class="cov0" title="0">{
+                fmt.Printf("Error load of dataset: %v\n", err)
+                return
+        }</span>
+
+        <span class="cov0" title="0">for i, imageBatch := range images </span><span class="cov0" title="0">{
+
+                imageBatchBytes, err := engine.Float32MatrixToBytes(engine.GetFirstImage(imageBatch))
+                if err != nil </span><span class="cov0" title="0">{
+                        fmt.Printf("Error Float32MatrixToBytes batch: %v\n", err)
+                        return
+                }</span>
+
+                //height, width := engine.GetMatrixSize(imageBatch)
+                <span class="cov0" title="0">height, width := 1, len(imageBatch[0])
+
+                requestTaskOne := pb.TaskOneRequest{
+                        TaskUID: uuid.New().String(),
+                        Image:   imageBatchBytes,
+                        Width:   int32(width),
+                        Height:  int32(height),
+                }
+
+                result, err := c.CreateOneTask(context.Background(), &amp;requestTaskOne)
+                if err != nil </span><span class="cov0" title="0">{
+                        fmt.Println(err)
+                }</span>
+
+                <span class="cov0" title="0">fmt.Println(i, result.ClassName)</span>
+
+        }
+
+}
+
+// DoReportBatch - сравнение идентичности работы двух сервисов
+func DoReportCompareBatch(connectorOne pb.ClassifyNNClient, connectorTwo pb.ClassifyNNClient) <span class="cov0" title="0">{
+
+        // Общая информация об нейронных сетях
+        infoOne, _ := connectorOne.GetInfo(context.Background(), &amp;emptypb.Empty{})
+        infoTwo, _ := connectorTwo.GetInfo(context.Background(), &amp;emptypb.Empty{})
+
+        fmt.Printf("NN one:\nName: %s\nDescription: %s\nVersion: %s\n", infoOne.Name, infoOne.Description, infoOne.Version)
+        fmt.Printf("NN one:\nName: %s\nDescription: %s\nVersion: %s\n", infoTwo.Name, infoTwo.Description, infoTwo.Version)
+
+        // Загрузка датасета
+        batchSize := 200
+        images, labels, err := engine.LoadDataset("../../../../../data/datasets/fashion_mnist_test.csv", batchSize) // labels
+
+        if err != nil </span><span class="cov0" title="0">{
+                fmt.Printf("Error load of dataset: %v\n", err)
+                return
+        }</span>
+
+        <span class="cov0" title="0">var totalAccuracyOne, totalAccuracyTwo float64
+
+        for i, imageBatch := range images </span><span class="cov0" title="0">{
+
+                imageBatchBytes, err := engine.Float32ToBytes2D(imageBatch)
+                if err != nil </span><span class="cov0" title="0">{
+                        fmt.Printf("Error Float32MatrixToBytes batch: %v\n", err)
+                        return
+                }</span>
+
+                //height, width := engine.GetMatrixSize(imageBatch)
+
+                <span class="cov0" title="0">requestTaskBatch := pb.TaskBatchRequest{
+                        TaskUID: uuid.New().String(),
+                        Images:  imageBatchBytes,
+                        Width:   int32(28), // размер изображения
+                        Height:  int32(28), // размер изображения
+                }
+
+                resultOne, errOne := connectorOne.CreateBatchCodeTask(context.Background(), &amp;requestTaskBatch) //CreateBatchTask
+                if errOne != nil </span><span class="cov0" title="0">{
+                        fmt.Println(errOne)
+                }</span>
+
+                <span class="cov0" title="0">resultTwo, errTwo := connectorTwo.CreateBatchCodeTask(context.Background(), &amp;requestTaskBatch) //CreateBatchTask
+                if errTwo != nil </span><span class="cov0" title="0">{
+                        fmt.Println(errTwo)
+                }</span>
+
+                <span class="cov0" title="0">if engine.CompareArrays(resultOne.ClassCodes, resultTwo.ClassCodes) </span><span class="cov0" title="0">{
+                        fmt.Printf("Batch: %d Total match\n", i)
+                }</span> else<span class="cov0" title="0"> {
+                        rateMatch := engine.CalculateMatchPercentage(resultOne.ClassCodes, resultTwo.ClassCodes)
+                        fmt.Printf("Batch: %d Only match: %f\n", i, rateMatch)
+                }</span>
+
+                <span class="cov0" title="0">labels_batch := engine.IntToInt32Slice(labels[i])
+                totalAccuracyOne = totalAccuracyOne + engine.CalculateMatchPercentage(resultOne.ClassCodes, labels_batch)
+                totalAccuracyTwo = totalAccuracyTwo + engine.CalculateMatchPercentage(resultTwo.ClassCodes, labels_batch)</span>
+
+        }
+
+        <span class="cov0" title="0">fmt.Println("Avg accuracy one: ", totalAccuracyOne/float64(len(images)))
+        fmt.Println("Avg accuracy two: ", totalAccuracyTwo/float64(len(images)))</span>
+
+}
+
+// DoReportPerformance - производительность сервиса
+func DoReportPerformance(c pb.ClassifyNNClient) <span class="cov0" title="0">{
+        // Загрузка датасета
+        batchSize := 200
+        images, _, err := engine.LoadDataset("../../../../../data/datasets/fashion_mnist_test.csv", batchSize) // labels
+
+        if err != nil </span><span class="cov0" title="0">{
+                fmt.Printf("Error load of dataset: %v\n", err)
+                return
+        }</span>
+
+        <span class="cov0" title="0">var batchsRequest pb.TaskBatchsRequest
+
+        for _, imageBatch := range images </span><span class="cov0" title="0">{
+
+                imageBatchBytes, err := engine.Float32ToBytes2D(imageBatch)
+                if err != nil </span><span class="cov0" title="0">{
+                        fmt.Printf("Error Float32MatrixToBytes batch: %v\n", err)
+                        return
+                }</span>
+
+                //height, width := engine.GetMatrixSize(imageBatch)
+
+                <span class="cov0" title="0">requestTaskBatch := pb.TaskBatchRequest{
+                        TaskUID: uuid.New().String(),
+                        Images:  imageBatchBytes,
+                        Width:   int32(28), // размер изображения
+                        Height:  int32(28), // размер изображения
+                }
+                batchsRequest.Batchs = append(batchsRequest.Batchs, &amp;requestTaskBatch)</span>
+        }
+
+        <span class="cov0" title="0">result, err := c.CreateBatchsTask(context.Background(), &amp;batchsRequest)
+        if err != nil </span><span class="cov0" title="0">{
+                fmt.Printf("CreateBatchsTask: %v\n", err)
+                return
+        }</span>
+
+        <span class="cov0" title="0">for i, batch := range result.Batchs </span><span class="cov0" title="0">{
+                fmt.Println(i, batch.ClassNames)
+        }</span>
+}
+</pre>
+		
+		<pre class="file" id="file11" style="display: none">package main
+
+import (
+        "fmt"
+        "os"
+)
+
+type Settings struct {
+        ServiceHostOne string
+        ServicePortOne string
+        ServiceHostTwo string
+        ServicePortTwo string
+}
+
+func NewSettings() (*Settings, error) <span class="cov0" title="0">{
+
+        serviceHostOne := os.Getenv("SERVICE_HOST_ONE")
+        servicePortOne := os.Getenv("SERVICE_PORT_ONE")
+        serviceHostTwo := os.Getenv("SERVICE_HOST_TWO")
+        servicePortTwo := os.Getenv("SERVICE_PORT_TWO")
+
+        return &amp;Settings{
+                ServiceHostOne: serviceHostOne,
+                ServicePortOne: servicePortOne,
+                ServiceHostTwo: serviceHostTwo,
+                ServicePortTwo: servicePortTwo,
+        }, nil
+}</span>
+
+func (s Settings) String() string <span class="cov0" title="0">{
+        result := fmt.Sprintf("Settings:\n\tServiceHostOne:%s\n\tServicePortOne:%s\n\tServiceHostTwo:%s\n\tServicePortTwo:%s\n",
+                s.ServiceHostOne, s.ServicePortOne, s.ServiceHostTwo, s.ServicePortTwo)
+        return result
+}</span>
+</pre>
+		
+		<pre class="file" id="file12" style="display: none">package configs
+
+import (
+        "flag"
+)
+
+func ParseFlags(settings *Settings) <span class="cov0" title="0">{
+
+        var host, port, protocol string
+
+        flag.StringVar(&amp;host, "h", "", "Host service")
+        flag.StringVar(&amp;port, "p", "", "Port")
+        flag.StringVar(&amp;protocol, "m", "", "Protocol: grpc | http")
+        flag.Parse()
+
+        // Update settings
+        if host != "" </span><span class="cov0" title="0">{
+                settings.ServiceHost = host
+        }</span>
+        <span class="cov0" title="0">if port != "" </span><span class="cov0" title="0">{
+                settings.ServicePort = port
+        }</span>
+        <span class="cov0" title="0">if protocol != "" </span><span class="cov0" title="0">{
+                settings.ServiceProtocol = protocol
+        }</span>
+}
+</pre>
+		
+		<pre class="file" id="file13" style="display: none">package configs
+
+import (
+        "io"
+        "os"
+
+        "github.com/sirupsen/logrus"
+)
+
+var Logger *logrus.Logger
+
+// Функция для создания логгера
+func GetLogger() *logrus.Logger <span class="cov0" title="0">{
+
+        logger := logrus.New()
+
+        // Устанавливаем вывод логгера на несколько writer'ов (консоль и файл)
+        multiWriter := io.MultiWriter(os.Stdout)
+        logger.SetOutput(multiWriter)
+
+        // Устанавливаем формат вывода
+        logger.SetFormatter(&amp;logrus.TextFormatter{
+                FullTimestamp: true,
+        })
+
+        return logger
+}</span>
+</pre>
+		
+		<pre class="file" id="file14" style="display: none">package configs
+
+import (
+        "fmt"
+        "os"
+)
+
+type Settings struct {
+        DatabaseDSN     string
+        SecretJWT       []byte
+        ServiceHost     string
+        ServicePort     string
+        ServiceProtocol string
+}
+
+func NewSettings() (*Settings, error) <span class="cov8" title="1">{
+
+        // Postgres
+        postgres_user := os.Getenv("POSTGRES_USER")
+        postgres_password := os.Getenv("POSTGRES_PASSWORD")
+        postgres_db := os.Getenv("POSTGRES_DB")
+        postgres_host := os.Getenv("POSTGRES_HOST")
+        postgres_port := os.Getenv("POSTGRES_PORT")
+        dsn := fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=disable", postgres_host, postgres_port,
+                postgres_user, postgres_db, postgres_password)
+        // Service
+        SERVICE_HOST := os.Getenv("SERVICE_HOST")
+        SERVICE_PORT := os.Getenv("SERVICE_PORT")
+        SERVICE_PROTOCOL := os.Getenv("SERVICE_PROTOCOL")
+
+        return &amp;Settings{
+                DatabaseDSN:     dsn,
+                SecretJWT:       []byte(os.Getenv("SECRET_JWT")),
+                ServiceHost:     SERVICE_HOST,
+                ServicePort:     SERVICE_PORT,
+                ServiceProtocol: SERVICE_PROTOCOL,
+        }, nil
+}</span>
+
+func (s Settings) String() string <span class="cov0" title="0">{
+        result := fmt.Sprintf("Settings:\n\tServerHost:%s\n\tServerPort:%s\n\tServiceProtocol:%s\n\tDatabaseDSN:%s\n",
+                s.ServiceHost, s.ServicePort, s.ServiceProtocol, s.DatabaseDSN)
+        return result
+}</span>
+
+var SettingsGlobal, _ = NewSettings()
+</pre>
+		
+		<pre class="file" id="file15" style="display: none">package engine
+
+import (
+        "encoding/csv"
+        "fmt"
+        "os"
+        "strconv"
+)
+
+// LoadDataset - загрузка датасета MNIST (размер изображений 28x28)
+func LoadDataset(filename string, batchSize int) ([][][]float32, [][]int, error) <span class="cov8" title="1">{ // old ([][784]float32, []int, error)
+        // Открываем файл
+        file, err := os.Open(filename)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, nil, err
+        }</span>
+        <span class="cov8" title="1">defer file.Close()
+
+        // Читаем содержимое CSV
+        reader := csv.NewReader(file)
+        records, err := reader.ReadAll()
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, nil, err
+        }</span>
+
+        // Преобразуем данные
+        <span class="cov8" title="1">var images [][784]float32
+        var labels []int
+        for _, record := range records[1:] </span><span class="cov8" title="1">{ // Пропускаем заголовок
+                // Первая колонка — метка
+                label, err := strconv.Atoi(record[0])
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, nil, err
+                }</span>
+                <span class="cov8" title="1">labels = append(labels, label)
+
+                // Остальные колонки — пиксели
+                var image [784]float32
+                for i := 0; i &lt; 784; i++ </span><span class="cov8" title="1">{
+                        pixel, err := strconv.ParseFloat(record[i+1], 32)
+                        if err != nil </span><span class="cov0" title="0">{
+                                return nil, nil, err
+                        }</span>
+                        <span class="cov8" title="1">image[i] = float32(pixel)</span>
+                }
+                <span class="cov8" title="1">images = append(images, image)</span>
+        }
+        //fmt.Println("All images:", len(images))
+
+        <span class="cov8" title="1">return batchArrayImages(images, batchSize), batchArrayLabels(labels, batchSize), nil</span>
+}
+
+// batchArrayImages - функция для нарезки на батчи
+func batchArrayImages(data [][784]float32, batchSize int) [][][]float32 <span class="cov8" title="1">{
+        if batchSize &lt;= 0 </span><span class="cov0" title="0">{
+                panic("batchSize должен быть больше 0")</span>
+        }
+
+        <span class="cov8" title="1">var batches [][][]float32
+        for i := 0; i &lt; len(data); i += batchSize </span><span class="cov8" title="1">{
+                // Определяем конец текущего батча
+                end := i + batchSize
+                if end &gt; len(data) </span><span class="cov0" title="0">{
+                        end = len(data)
+                }</span>
+
+                // Преобразуем [][784]float32 в [][]float32
+                <span class="cov8" title="1">var batch [][]float32
+                for _, row := range data[i:end] </span><span class="cov8" title="1">{
+                        batch = append(batch, row[:])
+                }</span>
+
+                <span class="cov8" title="1">batches = append(batches, batch)</span>
+        }
+
+        <span class="cov8" title="1">return batches</span>
+}
+
+// batchArrayLabels - функция для нарезки массива []int на батчи
+func batchArrayLabels(data []int, batchSize int) [][]int <span class="cov8" title="1">{
+        if batchSize &lt;= 0 </span><span class="cov0" title="0">{
+                panic("batchSize должен быть больше 0")</span>
+        }
+
+        <span class="cov8" title="1">var batches [][]int
+        for i := 0; i &lt; len(data); i += batchSize </span><span class="cov8" title="1">{
+                // Определяем конец текущего батча
+                end := i + batchSize
+                if end &gt; len(data) </span><span class="cov0" title="0">{
+                        end = len(data)
+                }</span>
+
+                // Добавляем текущий батч в результат
+                <span class="cov8" title="1">batches = append(batches, data[i:end])</span>
+        }
+
+        <span class="cov8" title="1">return batches</span>
+}
+
+// Flatten - aункция для преобразования [][]float32 в []float32
+func Flatten(batch [][]float32) []float32 <span class="cov8" title="1">{
+        var result []float32
+        for _, row := range batch </span><span class="cov8" title="1">{
+                result = append(result, row...)
+        }</span>
+        <span class="cov8" title="1">return result</span>
+}
+
+// Flatten3D - функция для преобразования [][][]float32 в []float32
+func Flatten3D(input [][][]float32) []float32 <span class="cov0" title="0">{
+        var result []float32
+        for _, matrix := range input </span><span class="cov0" title="0">{
+                for _, row := range matrix </span><span class="cov0" title="0">{
+                        result = append(result, row...)
+                }</span>
+        }
+        <span class="cov0" title="0">return result</span>
+}
+
+// ConvertToBatchedArray - превращает плоский массив в двуменрный
+func ConvertToBatchedArray(flatArray []float32, batchSize int64) ([][]float32, error) <span class="cov8" title="1">{
+
+        batchSizeInt := int(batchSize)
+
+        // Проверяем, что длина массива делится на batchSize
+        if len(flatArray)%batchSizeInt != 0 </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("длина массива %d не делится на batchSize %d", len(flatArray), batchSizeInt)
+        }</span>
+
+        // Размер каждого подмассива
+        <span class="cov8" title="1">subArraySize := len(flatArray) / batchSizeInt
+        batchedArray := make([][]float32, batchSize)
+
+        for i := 0; i &lt; batchSizeInt; i++ </span><span class="cov8" title="1">{
+                start := i * subArraySize
+                end := start + subArraySize
+                batchedArray[i] = flatArray[start:end]
+        }</span>
+
+        <span class="cov8" title="1">return batchedArray, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file16" style="display: none">package engine
+
+// Тип для классов
+type FashionClass int
+
+// Константы для классов
+const (
+        TShirtTop FashionClass = iota // 0
+        Trouser                       // 1
+        Pullover                      // 2
+        Dress                         // 3
+        Coat                          // 4
+        Sandal                        // 5
+        Shirt                         // 6
+        Sneaker                       // 7
+        Bag                           // 8
+        AnkleBoot                     // 9
+)
+
+// Названия классов в строковом виде
+var fashionClassNames = map[FashionClass]string{
+        TShirtTop: "T-shirt/Top",
+        Trouser:   "Trouser",
+        Pullover:  "Pullover",
+        Dress:     "Dress",
+        Coat:      "Coat",
+        Sandal:    "Sandal",
+        Shirt:     "Shirt",
+        Sneaker:   "Sneaker",
+        Bag:       "Bag",
+        AnkleBoot: "Ankle Boot",
+}
+
+// Метод для преобразования FashionClass в строку
+func (fc FashionClass) String() string <span class="cov0" title="0">{
+        return fashionClassNames[fc]
+}</span>
+
+// Преобразование массива целых чисел в массив строк
+func ConvertToClassNames(indices []int) []string <span class="cov0" title="0">{
+        classNames := make([]string, len(indices))
+        for i, index := range indices </span><span class="cov0" title="0">{
+                // Преобразуем индекс в тип FashionClass для извлечения названия
+                classNames[i] = fashionClassNames[FashionClass(index)]
+        }</span>
+        <span class="cov0" title="0">return classNames</span>
+}
+</pre>
+		
+		<pre class="file" id="file17" style="display: none">package engine
+
+import (
+        ort "github.com/yalue/onnxruntime_go"
+)
+
+// OnnxNeuralNetwork - нейронная сеть классификации изображений
+type OnnxNeuralNetwork struct {
+        PathToOnnxModelFile string
+        PathLibOnnxRuntime  string
+        InputLayer          NeuralLayer
+        OutputLayer         NeuralLayer
+}
+
+type NeuralLayer struct {
+        Name  string
+        Shape []int64
+}
+
+func NewOnnxNeuralNetwork(pathToOnnxModelFile string, pathLibOnnxRuntime string,
+        inputLayer NeuralLayer, outputLayer NeuralLayer) *OnnxNeuralNetwork <span class="cov8" title="1">{
+
+        ort.SetSharedLibraryPath(pathLibOnnxRuntime)
+
+        err := ort.InitializeEnvironment()
+        if err != nil </span><span class="cov0" title="0">{
+                panic(err)</span>
+        }
+
+        <span class="cov8" title="1">return &amp;OnnxNeuralNetwork{
+                PathToOnnxModelFile: pathToOnnxModelFile,
+                PathLibOnnxRuntime:  pathLibOnnxRuntime,
+                InputLayer:          inputLayer,
+                OutputLayer:         outputLayer,
+        }</span>
+}
+
+func (a *OnnxNeuralNetwork) Close() <span class="cov0" title="0">{
+        ort.DestroyEnvironment()
+}</span>
+
+// DetectRaw - детекция классов labels у батча с картинками images
+func (a *OnnxNeuralNetwork) DetectRaw(images [][]float32) (labels [][]float32, nnError error) <span class="cov8" title="1">{
+        inputData := Flatten(images)
+        batchSize := int64(len(images))
+
+        // Input
+        inputSize := append([]int64{batchSize}, a.InputLayer.Shape...)
+        inputShape := ort.NewShape(inputSize...)
+        inputTensor, _ := ort.NewTensor(inputShape, inputData)
+        defer inputTensor.Destroy()
+
+        // Output
+        outputSize := append([]int64{batchSize}, a.OutputLayer.Shape...)
+        outputShape := ort.NewShape(outputSize...)
+        outputTensor, _ := ort.NewEmptyTensor[float32](outputShape)
+        defer outputTensor.Destroy()
+
+        session, _ := ort.NewAdvancedSession(a.PathToOnnxModelFile,
+                []string{a.InputLayer.Name}, []string{a.OutputLayer.Name},
+                []ort.Value{inputTensor}, []ort.Value{outputTensor}, nil)
+        defer session.Destroy()
+
+        err := session.Run()
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">outputData := outputTensor.GetData()
+        result, err := ConvertToBatchedArray(outputData, batchSize)
+
+        return result, err</span>
+}
+
+// DetectCode - обработка батчи с картинками [N, Image] Image - одномерный массив с float картинки
+func (a *OnnxNeuralNetwork) DetectCode(images [][]float32) (labelClassCode []int, nnError error) <span class="cov8" title="1">{
+
+        if labels, err := a.DetectRaw(images); err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span> else<span class="cov8" title="1"> {
+                labelClassCode = FindMaxIndices(labels)
+        }</span>
+
+        <span class="cov8" title="1">return labelClassCode, nil</span>
+}
+
+func (a *OnnxNeuralNetwork) Detect(images [][]float32) (labelClasses []string, nnError error) <span class="cov0" title="0">{
+
+        var labelClassCode []int
+
+        if labels, err := a.DetectRaw(images); err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span> else<span class="cov0" title="0"> {
+                labelClassCode = FindMaxIndices(labels)
+        }</span>
+
+        <span class="cov0" title="0">labelClasses = ConvertToClassNames(labelClassCode)
+
+        return labelClasses, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file18" style="display: none">package engine
+
+import (
+        "bytes"
+        "encoding/binary"
+        "fmt"
+
+        //"errors"
+        "math"
+)
+
+func FindMaxIndices(labels [][]float32) []int <span class="cov8" title="1">{
+        // Массив для хранения индексов максимальных элементов
+        maxIndices := make([]int, len(labels))
+
+        // Перебираем каждый ряд массива
+        for i, row := range labels </span><span class="cov8" title="1">{
+                maxIndex := 0
+                maxValue := row[0]
+
+                // Найти индекс максимального элемента в текущем ряду
+                for j, value := range row </span><span class="cov8" title="1">{
+                        if value &gt; maxValue </span><span class="cov8" title="1">{
+                                maxValue = value
+                                maxIndex = j
+                        }</span>
+                }
+
+                // Добавляем индекс в результат
+                <span class="cov8" title="1">maxIndices[i] = maxIndex</span>
+        }
+
+        <span class="cov8" title="1">return maxIndices</span>
+}
+
+type Integer interface {
+        ~int | ~int8 | ~int16 | ~int32 | ~int64 | ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64
+}
+
+// Функция для сравнения двух массивов
+func CompareArrays[T Integer](arr1, arr2 []T) bool <span class="cov0" title="0">{
+        // Проверяем, что массивы одинаковой длины
+        if len(arr1) != len(arr2) </span><span class="cov0" title="0">{
+                return false
+        }</span>
+
+        // Сравниваем каждый элемент
+        <span class="cov0" title="0">for i := range arr1 </span><span class="cov0" title="0">{
+                if arr1[i] != arr2[i] </span><span class="cov0" title="0">{
+                        return false
+                }</span>
+        }
+
+        <span class="cov0" title="0">return true</span>
+}
+
+// Функция для подсчета процента совпадений
+func CalculateMatchPercentage[T Integer](arr1, arr2 []T) float64 <span class="cov8" title="1">{
+        // Проверяем, что массивы одинаковой длины
+        if len(arr1) != len(arr2) </span><span class="cov0" title="0">{
+                return 0 // Если массивы разной длины, процент совпадений невозможен
+        }</span>
+
+        // Считаем количество совпавших элементов
+        <span class="cov8" title="1">matches := 0
+        for i := range arr1 </span><span class="cov8" title="1">{
+                if arr1[i] == arr2[i] </span><span class="cov8" title="1">{
+                        matches++
+                }</span>
+        }
+
+        // Рассчитываем процент совпадений
+        <span class="cov8" title="1">percentage := (float64(matches) / float64(len(arr1))) * 100
+        return percentage</span>
+}
+
+// Float32MatrixToBytes
+func Float32MatrixToBytes(matrix [][]float32) ([]byte, error) <span class="cov0" title="0">{
+        var buf bytes.Buffer
+
+        // Проходим по строкам и колонкам матрицы
+        for _, row := range matrix </span><span class="cov0" title="0">{
+                for _, value := range row </span><span class="cov0" title="0">{
+                        // Конвертируем float32 в []byte и записываем в буфер
+                        if err := binary.Write(&amp;buf, binary.LittleEndian, value); err != nil </span><span class="cov0" title="0">{
+                                return nil, fmt.Errorf("failed to write float32: %w", err)
+                        }</span>
+                }
+        }
+
+        <span class="cov0" title="0">return buf.Bytes(), nil</span>
+}
+
+// BytesToFloat32Matrix - преобразование массива байт в исходный массив
+func BytesToFloat32Matrix(data []byte, rows, cols int) ([][]float32, error) <span class="cov0" title="0">{
+        // Проверяем, что длина данных соответствует размерам матрицы
+        expectedLength := rows * cols * 4 // 4 байта на float32
+        if len(data) != expectedLength </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("invalid data length: expected %d, got %d", expectedLength, len(data))
+        }</span>
+
+        // Создаём матрицу нужного размера
+        <span class="cov0" title="0">matrix := make([][]float32, rows)
+        for i := range matrix </span><span class="cov0" title="0">{
+                matrix[i] = make([]float32, cols)
+        }</span>
+
+        // Читаем данные из []byte
+        <span class="cov0" title="0">for i := 0; i &lt; rows; i++ </span><span class="cov0" title="0">{
+                for j := 0; j &lt; cols; j++ </span><span class="cov0" title="0">{
+                        offset := (i*cols + j) * 4                                       // Смещение для текущего элемента
+                        uintValue := binary.LittleEndian.Uint32(data[offset : offset+4]) // Читаем uint32
+                        matrix[i][j] = math.Float32frombits(uintValue)                   // Преобразуем uint32 в float32
+                }</span>
+        }
+
+        <span class="cov0" title="0">return matrix, nil</span>
+}
+
+// GetMatrixSize вычисляет количество строк и столбцов в массиве [][]float32
+func GetMatrixSize(matrix [][]float32) (rows, cols int) <span class="cov0" title="0">{
+        rows = len(matrix) // Количество строк — это длина внешнего массива
+        if rows &gt; 0 </span><span class="cov0" title="0">{
+                cols = len(matrix[0]) // Количество столбцов — это длина первой строки
+        }</span>
+        <span class="cov0" title="0">return rows, cols</span>
+}
+
+// GetFirstImage из массива извлекает только первое изображение
+func GetFirstImage(input [][]float32) [][]float32 <span class="cov0" title="0">{
+
+        // Проверяем, что input содержит хотя бы одну строку
+        if len(input) == 0 </span><span class="cov0" title="0">{
+                return [][]float32{} // Возвращаем пустой массив, если input пуст
+        }</span>
+
+        // Вычисляем ширину (количество столбцов)
+        <span class="cov0" title="0">width := len(input[0])
+
+        // Создаем массив [][]float32 с динамической длиной строки
+        var output [][]float32 = make([][]float32, 1)
+        output[0] = make([]float32, width)
+
+        // Копируем данные из первой строки input в output
+        for i := 0; i &lt; width; i++ </span><span class="cov0" title="0">{
+                output[0][i] = input[0][i]
+        }</span>
+
+        <span class="cov0" title="0">return output</span>
+}
+
+// BytesToFloat32Slice - массив []bytes -&gt; []float32
+func BytesToFloat32Slice(data []byte) ([]float32, error) <span class="cov8" title="1">{
+        // Длина массива float32
+        if len(data)%4 != 0 </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("invalid byte slice length: %d (must be multiple of 4)", len(data))
+        }</span>
+
+        // Вычисляем длину результирующего массива
+        <span class="cov8" title="1">numFloats := len(data) / 4
+        result := make([]float32, numFloats)
+
+        // Чтение данных
+        buf := bytes.NewReader(data)
+        for i := 0; i &lt; numFloats; i++ </span><span class="cov8" title="1">{
+                var f float32
+                err := binary.Read(buf, binary.LittleEndian, &amp;f)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+                <span class="cov8" title="1">result[i] = f</span>
+        }
+        <span class="cov8" title="1">return result, nil</span>
+}
+
+func IntToInt32Slice(input []int) []int32 <span class="cov8" title="1">{
+        // Создаем массив []int32 с той же длиной
+        result := make([]int32, len(input))
+
+        // Копируем элементы с явным преобразованием
+        for i, v := range input </span><span class="cov8" title="1">{
+                result[i] = int32(v)
+        }</span>
+
+        <span class="cov8" title="1">return result</span>
+}
+
+func Float32ToBytes2D(input [][]float32) ([][]byte, error) <span class="cov8" title="1">{
+        // Создаём выходной массив [][]byte с такой же структурой
+        output := make([][]byte, len(input))
+
+        for i, row := range input </span><span class="cov8" title="1">{
+                // Создаём срез []byte для каждой строки
+                rowBytes := new(bytes.Buffer)
+                for _, value := range row </span><span class="cov8" title="1">{
+                        // Записываем float32 в байты
+                        err := binary.Write(rowBytes, binary.LittleEndian, value)
+                        if err != nil </span><span class="cov0" title="0">{
+                                return nil, err
+                        }</span>
+                }
+                <span class="cov8" title="1">output[i] = rowBytes.Bytes()</span>
+        }
+
+        <span class="cov8" title="1">return output, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file19" style="display: none">package models
+
+import (
+        "fmt"
+
+        "github.com/google/uuid" // для поддержки массивов PostgreSQL
+        "gorm.io/gorm"
+)
+
+type OperatorRole string
+
+const (
+        RoleUser     OperatorRole = "User"
+        RoleAdmin    OperatorRole = "Admin"
+        RoleEngineer OperatorRole = "Engineer"
+)
+
+type Operator struct {
+        gorm.Model
+        OperatorUID uuid.UUID    `gorm:"type:uuid;default:uuid_generate_v4();unique;not null;index" json:"operatorUID"`
+        Name        string       `gorm:"unique;not null;index" json:"name"`
+        Password    string       `gorm:"not null" json:"password"`
+        Role        OperatorRole `gorm:"type:varchar(10);not null;default:'User';index" json:"role"`
+}
+
+func (o Operator) String() string <span class="cov0" title="0">{
+        result := fmt.Sprintf("\tOperatorUID=%s\n\tName=%s\n\tPassword=%s\n\tRole=%s",
+                o.OperatorUID.String(), o.Name, o.Password, o.Role,
+        )
+        return result
+}</span>
+
+type OperatorRequest struct {
+        Name     string `json:"name"`
+        Password string `json:"password"`
+        Role     string `json:"role"`
+}
+
+type OperatorResponseUID struct {
+        OperatorUID string `json:"operator_uid"`
+}
+
+type OperatorResponse struct {
+        OperatorUID uuid.UUID `json:"operatorUID"`
+        Name        string    `json:"name"`
+        Password    string    `json:"password"`
+        Role        string    `json:"role"`
+}
+
+// Cтруктура для получения логина и пароля
+type LoginRequest struct {
+        Name     string `json:"name"`
+        Password string `json:"password"`
+}
+
+// Cтруктура для ответа с JWT
+type LoginResponse struct {
+        Token string `json:"token"`
+}
+</pre>
+		
+		<pre class="file" id="file20" style="display: none">// Code generated by protoc-gen-go. DO NOT EDIT.
+// versions:
+//         protoc-gen-go v1.35.2
+//         protoc        v3.21.12
+// source: models.proto
+
+package nn_go
+
+import (
+        protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+        protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+        reflect "reflect"
+        sync "sync"
+)
+
+const (
+        // Verify that this generated code is sufficiently up-to-date.
+        _ = protoimpl.EnforceVersion(20 - protoimpl.MinVersion)
+        // Verify that runtime/protoimpl is sufficiently up-to-date.
+        _ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
+)
+
+// TaskOneRequest - передача изображения для классификации.
+type TaskOneRequest struct {
+        state         protoimpl.MessageState
+        sizeCache     protoimpl.SizeCache
+        unknownFields protoimpl.UnknownFields
+
+        TaskUID string `protobuf:"bytes,1,opt,name=taskUID,proto3" json:"taskUID,omitempty"` // UUID задачи в строковом формате
+        Image   []byte `protobuf:"bytes,2,opt,name=image,proto3" json:"image,omitempty"`     // изображение в виде массива байтов
+        Height  int32  `protobuf:"varint,3,opt,name=height,proto3" json:"height,omitempty"`  // изображения
+        Width   int32  `protobuf:"varint,4,opt,name=width,proto3" json:"width,omitempty"`    // изображения
+}
+
+func (x *TaskOneRequest) Reset() <span class="cov0" title="0">{
+        *x = TaskOneRequest{}
+        mi := &amp;file_models_proto_msgTypes[0]
+        ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+        ms.StoreMessageInfo(mi)
+}</span>
+
+func (x *TaskOneRequest) String() string <span class="cov0" title="0">{
+        return protoimpl.X.MessageStringOf(x)
+}</span>
+
+func (*TaskOneRequest) ProtoMessage() {<span class="cov0" title="0">}</span>
+
+func (x *TaskOneRequest) ProtoReflect() protoreflect.Message <span class="cov0" title="0">{
+        mi := &amp;file_models_proto_msgTypes[0]
+        if x != nil </span><span class="cov0" title="0">{
+                ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+                if ms.LoadMessageInfo() == nil </span><span class="cov0" title="0">{
+                        ms.StoreMessageInfo(mi)
+                }</span>
+                <span class="cov0" title="0">return ms</span>
+        }
+        <span class="cov0" title="0">return mi.MessageOf(x)</span>
+}
+
+// Deprecated: Use TaskOneRequest.ProtoReflect.Descriptor instead.
+func (*TaskOneRequest) Descriptor() ([]byte, []int) <span class="cov0" title="0">{
+        return file_models_proto_rawDescGZIP(), []int{0}
+}</span>
+
+func (x *TaskOneRequest) GetTaskUID() string <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.TaskUID
+        }</span>
+        <span class="cov0" title="0">return ""</span>
+}
+
+func (x *TaskOneRequest) GetImage() []byte <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Image
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (x *TaskOneRequest) GetHeight() int32 <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Height
+        }</span>
+        <span class="cov0" title="0">return 0</span>
+}
+
+func (x *TaskOneRequest) GetWidth() int32 <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Width
+        }</span>
+        <span class="cov0" title="0">return 0</span>
+}
+
+// TaskOneResponse - описание ответа
+type TaskOneResponse struct {
+        state         protoimpl.MessageState
+        sizeCache     protoimpl.SizeCache
+        unknownFields protoimpl.UnknownFields
+
+        TaskUID   string `protobuf:"bytes,1,opt,name=taskUID,proto3" json:"taskUID,omitempty"`
+        ClassName string `protobuf:"bytes,2,opt,name=className,proto3" json:"className,omitempty"`
+}
+
+func (x *TaskOneResponse) Reset() <span class="cov0" title="0">{
+        *x = TaskOneResponse{}
+        mi := &amp;file_models_proto_msgTypes[1]
+        ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+        ms.StoreMessageInfo(mi)
+}</span>
+
+func (x *TaskOneResponse) String() string <span class="cov0" title="0">{
+        return protoimpl.X.MessageStringOf(x)
+}</span>
+
+func (*TaskOneResponse) ProtoMessage() {<span class="cov0" title="0">}</span>
+
+func (x *TaskOneResponse) ProtoReflect() protoreflect.Message <span class="cov0" title="0">{
+        mi := &amp;file_models_proto_msgTypes[1]
+        if x != nil </span><span class="cov0" title="0">{
+                ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+                if ms.LoadMessageInfo() == nil </span><span class="cov0" title="0">{
+                        ms.StoreMessageInfo(mi)
+                }</span>
+                <span class="cov0" title="0">return ms</span>
+        }
+        <span class="cov0" title="0">return mi.MessageOf(x)</span>
+}
+
+// Deprecated: Use TaskOneResponse.ProtoReflect.Descriptor instead.
+func (*TaskOneResponse) Descriptor() ([]byte, []int) <span class="cov0" title="0">{
+        return file_models_proto_rawDescGZIP(), []int{1}
+}</span>
+
+func (x *TaskOneResponse) GetTaskUID() string <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.TaskUID
+        }</span>
+        <span class="cov0" title="0">return ""</span>
+}
+
+func (x *TaskOneResponse) GetClassName() string <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.ClassName
+        }</span>
+        <span class="cov0" title="0">return ""</span>
+}
+
+// TaskBatchRequest - передача батч с изображениями для классификации.
+type TaskBatchRequest struct {
+        state         protoimpl.MessageState
+        sizeCache     protoimpl.SizeCache
+        unknownFields protoimpl.UnknownFields
+
+        TaskUID string   `protobuf:"bytes,1,opt,name=taskUID,proto3" json:"taskUID,omitempty"` // UUID задачи в строковом формате
+        Images  [][]byte `protobuf:"bytes,2,rep,name=images,proto3" json:"images,omitempty"`   // изображения в виде массива байтов
+        Height  int32    `protobuf:"varint,3,opt,name=height,proto3" json:"height,omitempty"`  // изображения
+        Width   int32    `protobuf:"varint,4,opt,name=width,proto3" json:"width,omitempty"`    // изображения
+}
+
+func (x *TaskBatchRequest) Reset() <span class="cov0" title="0">{
+        *x = TaskBatchRequest{}
+        mi := &amp;file_models_proto_msgTypes[2]
+        ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+        ms.StoreMessageInfo(mi)
+}</span>
+
+func (x *TaskBatchRequest) String() string <span class="cov0" title="0">{
+        return protoimpl.X.MessageStringOf(x)
+}</span>
+
+func (*TaskBatchRequest) ProtoMessage() {<span class="cov0" title="0">}</span>
+
+func (x *TaskBatchRequest) ProtoReflect() protoreflect.Message <span class="cov0" title="0">{
+        mi := &amp;file_models_proto_msgTypes[2]
+        if x != nil </span><span class="cov0" title="0">{
+                ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+                if ms.LoadMessageInfo() == nil </span><span class="cov0" title="0">{
+                        ms.StoreMessageInfo(mi)
+                }</span>
+                <span class="cov0" title="0">return ms</span>
+        }
+        <span class="cov0" title="0">return mi.MessageOf(x)</span>
+}
+
+// Deprecated: Use TaskBatchRequest.ProtoReflect.Descriptor instead.
+func (*TaskBatchRequest) Descriptor() ([]byte, []int) <span class="cov0" title="0">{
+        return file_models_proto_rawDescGZIP(), []int{2}
+}</span>
+
+func (x *TaskBatchRequest) GetTaskUID() string <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.TaskUID
+        }</span>
+        <span class="cov0" title="0">return ""</span>
+}
+
+func (x *TaskBatchRequest) GetImages() [][]byte <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Images
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (x *TaskBatchRequest) GetHeight() int32 <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Height
+        }</span>
+        <span class="cov0" title="0">return 0</span>
+}
+
+func (x *TaskBatchRequest) GetWidth() int32 <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Width
+        }</span>
+        <span class="cov0" title="0">return 0</span>
+}
+
+// TaskBatchResponse - описание ответа
+type TaskBatchResponse struct {
+        state         protoimpl.MessageState
+        sizeCache     protoimpl.SizeCache
+        unknownFields protoimpl.UnknownFields
+
+        TaskUID    string   `protobuf:"bytes,1,opt,name=taskUID,proto3" json:"taskUID,omitempty"`
+        ClassNames []string `protobuf:"bytes,2,rep,name=classNames,proto3" json:"classNames,omitempty"` // массив имен классов
+}
+
+func (x *TaskBatchResponse) Reset() <span class="cov0" title="0">{
+        *x = TaskBatchResponse{}
+        mi := &amp;file_models_proto_msgTypes[3]
+        ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+        ms.StoreMessageInfo(mi)
+}</span>
+
+func (x *TaskBatchResponse) String() string <span class="cov0" title="0">{
+        return protoimpl.X.MessageStringOf(x)
+}</span>
+
+func (*TaskBatchResponse) ProtoMessage() {<span class="cov0" title="0">}</span>
+
+func (x *TaskBatchResponse) ProtoReflect() protoreflect.Message <span class="cov0" title="0">{
+        mi := &amp;file_models_proto_msgTypes[3]
+        if x != nil </span><span class="cov0" title="0">{
+                ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+                if ms.LoadMessageInfo() == nil </span><span class="cov0" title="0">{
+                        ms.StoreMessageInfo(mi)
+                }</span>
+                <span class="cov0" title="0">return ms</span>
+        }
+        <span class="cov0" title="0">return mi.MessageOf(x)</span>
+}
+
+// Deprecated: Use TaskBatchResponse.ProtoReflect.Descriptor instead.
+func (*TaskBatchResponse) Descriptor() ([]byte, []int) <span class="cov0" title="0">{
+        return file_models_proto_rawDescGZIP(), []int{3}
+}</span>
+
+func (x *TaskBatchResponse) GetTaskUID() string <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.TaskUID
+        }</span>
+        <span class="cov0" title="0">return ""</span>
+}
+
+func (x *TaskBatchResponse) GetClassNames() []string <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.ClassNames
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+// TaskBatchCodeResponse - описание ответа
+type TaskBatchCodeResponse struct {
+        state         protoimpl.MessageState
+        sizeCache     protoimpl.SizeCache
+        unknownFields protoimpl.UnknownFields
+
+        TaskUID    string  `protobuf:"bytes,1,opt,name=taskUID,proto3" json:"taskUID,omitempty"`
+        ClassCodes []int32 `protobuf:"varint,2,rep,packed,name=classCodes,proto3" json:"classCodes,omitempty"` // массив кодов классов
+}
+
+func (x *TaskBatchCodeResponse) Reset() <span class="cov0" title="0">{
+        *x = TaskBatchCodeResponse{}
+        mi := &amp;file_models_proto_msgTypes[4]
+        ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+        ms.StoreMessageInfo(mi)
+}</span>
+
+func (x *TaskBatchCodeResponse) String() string <span class="cov0" title="0">{
+        return protoimpl.X.MessageStringOf(x)
+}</span>
+
+func (*TaskBatchCodeResponse) ProtoMessage() {<span class="cov0" title="0">}</span>
+
+func (x *TaskBatchCodeResponse) ProtoReflect() protoreflect.Message <span class="cov0" title="0">{
+        mi := &amp;file_models_proto_msgTypes[4]
+        if x != nil </span><span class="cov0" title="0">{
+                ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+                if ms.LoadMessageInfo() == nil </span><span class="cov0" title="0">{
+                        ms.StoreMessageInfo(mi)
+                }</span>
+                <span class="cov0" title="0">return ms</span>
+        }
+        <span class="cov0" title="0">return mi.MessageOf(x)</span>
+}
+
+// Deprecated: Use TaskBatchCodeResponse.ProtoReflect.Descriptor instead.
+func (*TaskBatchCodeResponse) Descriptor() ([]byte, []int) <span class="cov0" title="0">{
+        return file_models_proto_rawDescGZIP(), []int{4}
+}</span>
+
+func (x *TaskBatchCodeResponse) GetTaskUID() string <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.TaskUID
+        }</span>
+        <span class="cov0" title="0">return ""</span>
+}
+
+func (x *TaskBatchCodeResponse) GetClassCodes() []int32 <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.ClassCodes
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+// TaskOneRequest - передача изображения для классификации.
+type ServiceInfoNN struct {
+        state         protoimpl.MessageState
+        sizeCache     protoimpl.SizeCache
+        unknownFields protoimpl.UnknownFields
+
+        Name        string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`               // имя модели нейронной сети
+        Description string `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"` // описание
+        Version     string `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`         // версия
+}
+
+func (x *ServiceInfoNN) Reset() <span class="cov0" title="0">{
+        *x = ServiceInfoNN{}
+        mi := &amp;file_models_proto_msgTypes[5]
+        ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+        ms.StoreMessageInfo(mi)
+}</span>
+
+func (x *ServiceInfoNN) String() string <span class="cov0" title="0">{
+        return protoimpl.X.MessageStringOf(x)
+}</span>
+
+func (*ServiceInfoNN) ProtoMessage() {<span class="cov0" title="0">}</span>
+
+func (x *ServiceInfoNN) ProtoReflect() protoreflect.Message <span class="cov0" title="0">{
+        mi := &amp;file_models_proto_msgTypes[5]
+        if x != nil </span><span class="cov0" title="0">{
+                ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+                if ms.LoadMessageInfo() == nil </span><span class="cov0" title="0">{
+                        ms.StoreMessageInfo(mi)
+                }</span>
+                <span class="cov0" title="0">return ms</span>
+        }
+        <span class="cov0" title="0">return mi.MessageOf(x)</span>
+}
+
+// Deprecated: Use ServiceInfoNN.ProtoReflect.Descriptor instead.
+func (*ServiceInfoNN) Descriptor() ([]byte, []int) <span class="cov0" title="0">{
+        return file_models_proto_rawDescGZIP(), []int{5}
+}</span>
+
+func (x *ServiceInfoNN) GetName() string <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Name
+        }</span>
+        <span class="cov0" title="0">return ""</span>
+}
+
+func (x *ServiceInfoNN) GetDescription() string <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Description
+        }</span>
+        <span class="cov0" title="0">return ""</span>
+}
+
+func (x *ServiceInfoNN) GetVersion() string <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Version
+        }</span>
+        <span class="cov0" title="0">return ""</span>
+}
+
+// TaskBatchsRequest - передача батчей с изображениями
+type TaskBatchsRequest struct {
+        state         protoimpl.MessageState
+        sizeCache     protoimpl.SizeCache
+        unknownFields protoimpl.UnknownFields
+
+        Batchs []*TaskBatchRequest `protobuf:"bytes,1,rep,name=batchs,proto3" json:"batchs,omitempty"` // батчи с изображениями для классификации
+}
+
+func (x *TaskBatchsRequest) Reset() <span class="cov0" title="0">{
+        *x = TaskBatchsRequest{}
+        mi := &amp;file_models_proto_msgTypes[6]
+        ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+        ms.StoreMessageInfo(mi)
+}</span>
+
+func (x *TaskBatchsRequest) String() string <span class="cov0" title="0">{
+        return protoimpl.X.MessageStringOf(x)
+}</span>
+
+func (*TaskBatchsRequest) ProtoMessage() {<span class="cov0" title="0">}</span>
+
+func (x *TaskBatchsRequest) ProtoReflect() protoreflect.Message <span class="cov0" title="0">{
+        mi := &amp;file_models_proto_msgTypes[6]
+        if x != nil </span><span class="cov0" title="0">{
+                ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+                if ms.LoadMessageInfo() == nil </span><span class="cov0" title="0">{
+                        ms.StoreMessageInfo(mi)
+                }</span>
+                <span class="cov0" title="0">return ms</span>
+        }
+        <span class="cov0" title="0">return mi.MessageOf(x)</span>
+}
+
+// Deprecated: Use TaskBatchsRequest.ProtoReflect.Descriptor instead.
+func (*TaskBatchsRequest) Descriptor() ([]byte, []int) <span class="cov0" title="0">{
+        return file_models_proto_rawDescGZIP(), []int{6}
+}</span>
+
+func (x *TaskBatchsRequest) GetBatchs() []*TaskBatchRequest <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Batchs
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+// TaskBatchsResponse - ответы по обработке батчей с изображениями
+type TaskBatchsResponse struct {
+        state         protoimpl.MessageState
+        sizeCache     protoimpl.SizeCache
+        unknownFields protoimpl.UnknownFields
+
+        Batchs []*TaskBatchResponse `protobuf:"bytes,1,rep,name=batchs,proto3" json:"batchs,omitempty"`
+}
+
+func (x *TaskBatchsResponse) Reset() <span class="cov0" title="0">{
+        *x = TaskBatchsResponse{}
+        mi := &amp;file_models_proto_msgTypes[7]
+        ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+        ms.StoreMessageInfo(mi)
+}</span>
+
+func (x *TaskBatchsResponse) String() string <span class="cov0" title="0">{
+        return protoimpl.X.MessageStringOf(x)
+}</span>
+
+func (*TaskBatchsResponse) ProtoMessage() {<span class="cov0" title="0">}</span>
+
+func (x *TaskBatchsResponse) ProtoReflect() protoreflect.Message <span class="cov0" title="0">{
+        mi := &amp;file_models_proto_msgTypes[7]
+        if x != nil </span><span class="cov0" title="0">{
+                ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+                if ms.LoadMessageInfo() == nil </span><span class="cov0" title="0">{
+                        ms.StoreMessageInfo(mi)
+                }</span>
+                <span class="cov0" title="0">return ms</span>
+        }
+        <span class="cov0" title="0">return mi.MessageOf(x)</span>
+}
+
+// Deprecated: Use TaskBatchsResponse.ProtoReflect.Descriptor instead.
+func (*TaskBatchsResponse) Descriptor() ([]byte, []int) <span class="cov0" title="0">{
+        return file_models_proto_rawDescGZIP(), []int{7}
+}</span>
+
+func (x *TaskBatchsResponse) GetBatchs() []*TaskBatchResponse <span class="cov0" title="0">{
+        if x != nil </span><span class="cov0" title="0">{
+                return x.Batchs
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+var File_models_proto protoreflect.FileDescriptor
+
+var file_models_proto_rawDesc = []byte{
+        0x0a, 0x0c, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x05,
+        0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x22, 0x6e, 0x0a, 0x0e, 0x54, 0x61, 0x73, 0x6b, 0x4f, 0x6e, 0x65,
+        0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x55,
+        0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x55, 0x49,
+        0x44, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c,
+        0x52, 0x05, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x68, 0x65, 0x69, 0x67, 0x68,
+        0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x12,
+        0x14, 0x0a, 0x05, 0x77, 0x69, 0x64, 0x74, 0x68, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05,
+        0x77, 0x69, 0x64, 0x74, 0x68, 0x22, 0x49, 0x0a, 0x0f, 0x54, 0x61, 0x73, 0x6b, 0x4f, 0x6e, 0x65,
+        0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x74, 0x61, 0x73, 0x6b,
+        0x55, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x55,
+        0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x4e, 0x61, 0x6d, 0x65, 0x18,
+        0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x4e, 0x61, 0x6d, 0x65,
+        0x22, 0x72, 0x0a, 0x10, 0x54, 0x61, 0x73, 0x6b, 0x42, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x71,
+        0x75, 0x65, 0x73, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x55, 0x49, 0x44, 0x18,
+        0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x74, 0x61, 0x73, 0x6b, 0x55, 0x49, 0x44, 0x12, 0x16,
+        0x0a, 0x06, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0c, 0x52, 0x06,
+        0x69, 0x6d, 0x61, 0x67, 0x65, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74,
+        0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x12, 0x14,
+        0x0a, 0x05, 0x77, 0x69, 0x64, 0x74, 0x68, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x77,
+        0x69, 0x64, 0x74, 0x68, 0x22, 0x4d, 0x0a, 0x11, 0x54, 0x61, 0x73, 0x6b, 0x42, 0x61, 0x74, 0x63,
+        0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x74, 0x61, 0x73,
+        0x6b, 0x55, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x74, 0x61, 0x73, 0x6b,
+        0x55, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x4e, 0x61, 0x6d, 0x65,
+        0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0a, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x4e, 0x61,
+        0x6d, 0x65, 0x73, 0x22, 0x51, 0x0a, 0x15, 0x54, 0x61, 0x73, 0x6b, 0x42, 0x61, 0x74, 0x63, 0x68,
+        0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07,
+        0x74, 0x61, 0x73, 0x6b, 0x55, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x74,
+        0x61, 0x73, 0x6b, 0x55, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x43,
+        0x6f, 0x64, 0x65, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x05, 0x52, 0x0a, 0x63, 0x6c, 0x61, 0x73,
+        0x73, 0x43, 0x6f, 0x64, 0x65, 0x73, 0x22, 0x5f, 0x0a, 0x0d, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
+        0x65, 0x49, 0x6e, 0x66, 0x6f, 0x4e, 0x4e, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18,
+        0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64,
+        0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+        0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x0a,
+        0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
+        0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x44, 0x0a, 0x11, 0x54, 0x61, 0x73, 0x6b, 0x42,
+        0x61, 0x74, 0x63, 0x68, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2f, 0x0a, 0x06,
+        0x62, 0x61, 0x74, 0x63, 0x68, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x6e,
+        0x6e, 0x5f, 0x67, 0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x42, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65,
+        0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x06, 0x62, 0x61, 0x74, 0x63, 0x68, 0x73, 0x22, 0x46, 0x0a,
+        0x12, 0x54, 0x61, 0x73, 0x6b, 0x42, 0x61, 0x74, 0x63, 0x68, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+        0x6e, 0x73, 0x65, 0x12, 0x30, 0x0a, 0x06, 0x62, 0x61, 0x74, 0x63, 0x68, 0x73, 0x18, 0x01, 0x20,
+        0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b,
+        0x42, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x52, 0x06, 0x62,
+        0x61, 0x74, 0x63, 0x68, 0x73, 0x42, 0x0f, 0x5a, 0x0d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+        0x2f, 0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+}
+
+var (
+        file_models_proto_rawDescOnce sync.Once
+        file_models_proto_rawDescData = file_models_proto_rawDesc
+)
+
+func file_models_proto_rawDescGZIP() []byte <span class="cov0" title="0">{
+        file_models_proto_rawDescOnce.Do(func() </span><span class="cov0" title="0">{
+                file_models_proto_rawDescData = protoimpl.X.CompressGZIP(file_models_proto_rawDescData)
+        }</span>)
+        <span class="cov0" title="0">return file_models_proto_rawDescData</span>
+}
+
+var file_models_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_models_proto_goTypes = []any{
+        (*TaskOneRequest)(nil),        // 0: nn_go.TaskOneRequest
+        (*TaskOneResponse)(nil),       // 1: nn_go.TaskOneResponse
+        (*TaskBatchRequest)(nil),      // 2: nn_go.TaskBatchRequest
+        (*TaskBatchResponse)(nil),     // 3: nn_go.TaskBatchResponse
+        (*TaskBatchCodeResponse)(nil), // 4: nn_go.TaskBatchCodeResponse
+        (*ServiceInfoNN)(nil),         // 5: nn_go.ServiceInfoNN
+        (*TaskBatchsRequest)(nil),     // 6: nn_go.TaskBatchsRequest
+        (*TaskBatchsResponse)(nil),    // 7: nn_go.TaskBatchsResponse
+}
+var file_models_proto_depIdxs = []int32{
+        2, // 0: nn_go.TaskBatchsRequest.batchs:type_name -&gt; nn_go.TaskBatchRequest
+        3, // 1: nn_go.TaskBatchsResponse.batchs:type_name -&gt; nn_go.TaskBatchResponse
+        2, // [2:2] is the sub-list for method output_type
+        2, // [2:2] is the sub-list for method input_type
+        2, // [2:2] is the sub-list for extension type_name
+        2, // [2:2] is the sub-list for extension extendee
+        0, // [0:2] is the sub-list for field type_name
+}
+
+func init() <span class="cov8" title="1">{ file_models_proto_init() }</span>
+func file_models_proto_init() <span class="cov8" title="1">{
+        if File_models_proto != nil </span><span class="cov8" title="1">{
+                return
+        }</span>
+        <span class="cov8" title="1">type x struct{}
+        out := protoimpl.TypeBuilder{
+                File: protoimpl.DescBuilder{
+                        GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
+                        RawDescriptor: file_models_proto_rawDesc,
+                        NumEnums:      0,
+                        NumMessages:   8,
+                        NumExtensions: 0,
+                        NumServices:   0,
+                },
+                GoTypes:           file_models_proto_goTypes,
+                DependencyIndexes: file_models_proto_depIdxs,
+                MessageInfos:      file_models_proto_msgTypes,
+        }.Build()
+        File_models_proto = out.File
+        file_models_proto_rawDesc = nil
+        file_models_proto_goTypes = nil
+        file_models_proto_depIdxs = nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file21" style="display: none">// Code generated by protoc-gen-go. DO NOT EDIT.
+// versions:
+//         protoc-gen-go v1.35.2
+//         protoc        v3.21.12
+// source: server.proto
+
+package nn_go
+
+import (
+        protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+        protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+        emptypb "google.golang.org/protobuf/types/known/emptypb"
+        reflect "reflect"
+)
+
+const (
+        // Verify that this generated code is sufficiently up-to-date.
+        _ = protoimpl.EnforceVersion(20 - protoimpl.MinVersion)
+        // Verify that runtime/protoimpl is sufficiently up-to-date.
+        _ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
+)
+
+var File_server_proto protoreflect.FileDescriptor
+
+var file_server_proto_rawDesc = []byte{
+        0x0a, 0x0c, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x05,
+        0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x1a, 0x0c, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72,
+        0x6f, 0x74, 0x6f, 0x1a, 0x1b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74,
+        0x6f, 0x62, 0x75, 0x66, 0x2f, 0x65, 0x6d, 0x70, 0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+        0x32, 0xe2, 0x02, 0x0a, 0x0a, 0x43, 0x6c, 0x61, 0x73, 0x73, 0x69, 0x66, 0x79, 0x4e, 0x4e, 0x12,
+        0x37, 0x0a, 0x07, 0x47, 0x65, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x16, 0x2e, 0x67, 0x6f, 0x6f,
+        0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70,
+        0x74, 0x79, 0x1a, 0x14, 0x2e, 0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69,
+        0x63, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x4e, 0x4e, 0x12, 0x3e, 0x0a, 0x0d, 0x43, 0x72, 0x65, 0x61,
+        0x74, 0x65, 0x4f, 0x6e, 0x65, 0x54, 0x61, 0x73, 0x6b, 0x12, 0x15, 0x2e, 0x6e, 0x6e, 0x5f, 0x67,
+        0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x4f, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+        0x1a, 0x16, 0x2e, 0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x4f, 0x6e, 0x65,
+        0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x44, 0x0a, 0x0f, 0x43, 0x72, 0x65, 0x61,
+        0x74, 0x65, 0x42, 0x61, 0x74, 0x63, 0x68, 0x54, 0x61, 0x73, 0x6b, 0x12, 0x17, 0x2e, 0x6e, 0x6e,
+        0x5f, 0x67, 0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x42, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x71,
+        0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x2e, 0x54, 0x61, 0x73,
+        0x6b, 0x42, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4c,
+        0x0a, 0x13, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x42, 0x61, 0x74, 0x63, 0x68, 0x43, 0x6f, 0x64,
+        0x65, 0x54, 0x61, 0x73, 0x6b, 0x12, 0x17, 0x2e, 0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x2e, 0x54, 0x61,
+        0x73, 0x6b, 0x42, 0x61, 0x74, 0x63, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c,
+        0x2e, 0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x42, 0x61, 0x74, 0x63, 0x68,
+        0x43, 0x6f, 0x64, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x47, 0x0a, 0x10,
+        0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x42, 0x61, 0x74, 0x63, 0x68, 0x73, 0x54, 0x61, 0x73, 0x6b,
+        0x12, 0x18, 0x2e, 0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x42, 0x61, 0x74,
+        0x63, 0x68, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x6e, 0x6e, 0x5f,
+        0x67, 0x6f, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x42, 0x61, 0x74, 0x63, 0x68, 0x73, 0x52, 0x65, 0x73,
+        0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x0f, 0x5a, 0x0d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+        0x2f, 0x6e, 0x6e, 0x5f, 0x67, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+}
+
+var file_server_proto_goTypes = []any{
+        (*emptypb.Empty)(nil),         // 0: google.protobuf.Empty
+        (*TaskOneRequest)(nil),        // 1: nn_go.TaskOneRequest
+        (*TaskBatchRequest)(nil),      // 2: nn_go.TaskBatchRequest
+        (*TaskBatchsRequest)(nil),     // 3: nn_go.TaskBatchsRequest
+        (*ServiceInfoNN)(nil),         // 4: nn_go.ServiceInfoNN
+        (*TaskOneResponse)(nil),       // 5: nn_go.TaskOneResponse
+        (*TaskBatchResponse)(nil),     // 6: nn_go.TaskBatchResponse
+        (*TaskBatchCodeResponse)(nil), // 7: nn_go.TaskBatchCodeResponse
+        (*TaskBatchsResponse)(nil),    // 8: nn_go.TaskBatchsResponse
+}
+var file_server_proto_depIdxs = []int32{
+        0, // 0: nn_go.ClassifyNN.GetInfo:input_type -&gt; google.protobuf.Empty
+        1, // 1: nn_go.ClassifyNN.CreateOneTask:input_type -&gt; nn_go.TaskOneRequest
+        2, // 2: nn_go.ClassifyNN.CreateBatchTask:input_type -&gt; nn_go.TaskBatchRequest
+        2, // 3: nn_go.ClassifyNN.CreateBatchCodeTask:input_type -&gt; nn_go.TaskBatchRequest
+        3, // 4: nn_go.ClassifyNN.CreateBatchsTask:input_type -&gt; nn_go.TaskBatchsRequest
+        4, // 5: nn_go.ClassifyNN.GetInfo:output_type -&gt; nn_go.ServiceInfoNN
+        5, // 6: nn_go.ClassifyNN.CreateOneTask:output_type -&gt; nn_go.TaskOneResponse
+        6, // 7: nn_go.ClassifyNN.CreateBatchTask:output_type -&gt; nn_go.TaskBatchResponse
+        7, // 8: nn_go.ClassifyNN.CreateBatchCodeTask:output_type -&gt; nn_go.TaskBatchCodeResponse
+        8, // 9: nn_go.ClassifyNN.CreateBatchsTask:output_type -&gt; nn_go.TaskBatchsResponse
+        5, // [5:10] is the sub-list for method output_type
+        0, // [0:5] is the sub-list for method input_type
+        0, // [0:0] is the sub-list for extension type_name
+        0, // [0:0] is the sub-list for extension extendee
+        0, // [0:0] is the sub-list for field type_name
+}
+
+func init() <span class="cov8" title="1">{ file_server_proto_init() }</span>
+func file_server_proto_init() <span class="cov8" title="1">{
+        if File_server_proto != nil </span><span class="cov0" title="0">{
+                return
+        }</span>
+        <span class="cov8" title="1">file_models_proto_init()
+        type x struct{}
+        out := protoimpl.TypeBuilder{
+                File: protoimpl.DescBuilder{
+                        GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
+                        RawDescriptor: file_server_proto_rawDesc,
+                        NumEnums:      0,
+                        NumMessages:   0,
+                        NumExtensions: 0,
+                        NumServices:   1,
+                },
+                GoTypes:           file_server_proto_goTypes,
+                DependencyIndexes: file_server_proto_depIdxs,
+        }.Build()
+        File_server_proto = out.File
+        file_server_proto_rawDesc = nil
+        file_server_proto_goTypes = nil
+        file_server_proto_depIdxs = nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file22" style="display: none">// Code generated by protoc-gen-go-grpc. DO NOT EDIT.
+// versions:
+// - protoc-gen-go-grpc v1.5.1
+// - protoc             v3.21.12
+// source: server.proto
+
+package nn_go
+
+import (
+        context "context"
+        grpc "google.golang.org/grpc"
+        codes "google.golang.org/grpc/codes"
+        status "google.golang.org/grpc/status"
+        emptypb "google.golang.org/protobuf/types/known/emptypb"
+)
+
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the grpc package it is being compiled against.
+// Requires gRPC-Go v1.64.0 or later.
+const _ = grpc.SupportPackageIsVersion9
+
+const (
+        ClassifyNN_GetInfo_FullMethodName             = "/nn_go.ClassifyNN/GetInfo"
+        ClassifyNN_CreateOneTask_FullMethodName       = "/nn_go.ClassifyNN/CreateOneTask"
+        ClassifyNN_CreateBatchTask_FullMethodName     = "/nn_go.ClassifyNN/CreateBatchTask"
+        ClassifyNN_CreateBatchCodeTask_FullMethodName = "/nn_go.ClassifyNN/CreateBatchCodeTask"
+        ClassifyNN_CreateBatchsTask_FullMethodName    = "/nn_go.ClassifyNN/CreateBatchsTask"
+)
+
+// ClassifyNNClient is the client API for ClassifyNN service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type ClassifyNNClient interface {
+        GetInfo(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*ServiceInfoNN, error)
+        CreateOneTask(ctx context.Context, in *TaskOneRequest, opts ...grpc.CallOption) (*TaskOneResponse, error)
+        CreateBatchTask(ctx context.Context, in *TaskBatchRequest, opts ...grpc.CallOption) (*TaskBatchResponse, error)
+        CreateBatchCodeTask(ctx context.Context, in *TaskBatchRequest, opts ...grpc.CallOption) (*TaskBatchCodeResponse, error)
+        CreateBatchsTask(ctx context.Context, in *TaskBatchsRequest, opts ...grpc.CallOption) (*TaskBatchsResponse, error)
+}
+
+type classifyNNClient struct {
+        cc grpc.ClientConnInterface
+}
+
+func NewClassifyNNClient(cc grpc.ClientConnInterface) ClassifyNNClient <span class="cov0" title="0">{
+        return &amp;classifyNNClient{cc}
+}</span>
+
+func (c *classifyNNClient) GetInfo(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*ServiceInfoNN, error) <span class="cov0" title="0">{
+        cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+        out := new(ServiceInfoNN)
+        err := c.cc.Invoke(ctx, ClassifyNN_GetInfo_FullMethodName, in, out, cOpts...)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">return out, nil</span>
+}
+
+func (c *classifyNNClient) CreateOneTask(ctx context.Context, in *TaskOneRequest, opts ...grpc.CallOption) (*TaskOneResponse, error) <span class="cov0" title="0">{
+        cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+        out := new(TaskOneResponse)
+        err := c.cc.Invoke(ctx, ClassifyNN_CreateOneTask_FullMethodName, in, out, cOpts...)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">return out, nil</span>
+}
+
+func (c *classifyNNClient) CreateBatchTask(ctx context.Context, in *TaskBatchRequest, opts ...grpc.CallOption) (*TaskBatchResponse, error) <span class="cov0" title="0">{
+        cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+        out := new(TaskBatchResponse)
+        err := c.cc.Invoke(ctx, ClassifyNN_CreateBatchTask_FullMethodName, in, out, cOpts...)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">return out, nil</span>
+}
+
+func (c *classifyNNClient) CreateBatchCodeTask(ctx context.Context, in *TaskBatchRequest, opts ...grpc.CallOption) (*TaskBatchCodeResponse, error) <span class="cov0" title="0">{
+        cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+        out := new(TaskBatchCodeResponse)
+        err := c.cc.Invoke(ctx, ClassifyNN_CreateBatchCodeTask_FullMethodName, in, out, cOpts...)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">return out, nil</span>
+}
+
+func (c *classifyNNClient) CreateBatchsTask(ctx context.Context, in *TaskBatchsRequest, opts ...grpc.CallOption) (*TaskBatchsResponse, error) <span class="cov0" title="0">{
+        cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+        out := new(TaskBatchsResponse)
+        err := c.cc.Invoke(ctx, ClassifyNN_CreateBatchsTask_FullMethodName, in, out, cOpts...)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">return out, nil</span>
+}
+
+// ClassifyNNServer is the server API for ClassifyNN service.
+// All implementations must embed UnimplementedClassifyNNServer
+// for forward compatibility.
+type ClassifyNNServer interface {
+        GetInfo(context.Context, *emptypb.Empty) (*ServiceInfoNN, error)
+        CreateOneTask(context.Context, *TaskOneRequest) (*TaskOneResponse, error)
+        CreateBatchTask(context.Context, *TaskBatchRequest) (*TaskBatchResponse, error)
+        CreateBatchCodeTask(context.Context, *TaskBatchRequest) (*TaskBatchCodeResponse, error)
+        CreateBatchsTask(context.Context, *TaskBatchsRequest) (*TaskBatchsResponse, error)
+        mustEmbedUnimplementedClassifyNNServer()
+}
+
+// UnimplementedClassifyNNServer must be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedClassifyNNServer struct{}
+
+func (UnimplementedClassifyNNServer) GetInfo(context.Context, *emptypb.Empty) (*ServiceInfoNN, error) <span class="cov0" title="0">{
+        return nil, status.Errorf(codes.Unimplemented, "method GetInfo not implemented")
+}</span>
+func (UnimplementedClassifyNNServer) CreateOneTask(context.Context, *TaskOneRequest) (*TaskOneResponse, error) <span class="cov0" title="0">{
+        return nil, status.Errorf(codes.Unimplemented, "method CreateOneTask not implemented")
+}</span>
+func (UnimplementedClassifyNNServer) CreateBatchTask(context.Context, *TaskBatchRequest) (*TaskBatchResponse, error) <span class="cov0" title="0">{
+        return nil, status.Errorf(codes.Unimplemented, "method CreateBatchTask not implemented")
+}</span>
+func (UnimplementedClassifyNNServer) CreateBatchCodeTask(context.Context, *TaskBatchRequest) (*TaskBatchCodeResponse, error) <span class="cov0" title="0">{
+        return nil, status.Errorf(codes.Unimplemented, "method CreateBatchCodeTask not implemented")
+}</span>
+func (UnimplementedClassifyNNServer) CreateBatchsTask(context.Context, *TaskBatchsRequest) (*TaskBatchsResponse, error) <span class="cov0" title="0">{
+        return nil, status.Errorf(codes.Unimplemented, "method CreateBatchsTask not implemented")
+}</span>
+func (UnimplementedClassifyNNServer) mustEmbedUnimplementedClassifyNNServer() {<span class="cov0" title="0">}</span>
+func (UnimplementedClassifyNNServer) testEmbeddedByValue()                    {<span class="cov0" title="0">}</span>
+
+// UnsafeClassifyNNServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ClassifyNNServer will
+// result in compilation errors.
+type UnsafeClassifyNNServer interface {
+        mustEmbedUnimplementedClassifyNNServer()
+}
+
+func RegisterClassifyNNServer(s grpc.ServiceRegistrar, srv ClassifyNNServer) <span class="cov0" title="0">{
+        // If the following call pancis, it indicates UnimplementedClassifyNNServer was
+        // embedded by pointer and is nil.  This will cause panics if an
+        // unimplemented method is ever invoked, so we test this at initialization
+        // time to prevent it from happening at runtime later due to I/O.
+        if t, ok := srv.(interface{ testEmbeddedByValue() }); ok </span><span class="cov0" title="0">{
+                t.testEmbeddedByValue()
+        }</span>
+        <span class="cov0" title="0">s.RegisterService(&amp;ClassifyNN_ServiceDesc, srv)</span>
+}
+
+func _ClassifyNN_GetInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) <span class="cov0" title="0">{
+        in := new(emptypb.Empty)
+        if err := dec(in); err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">if interceptor == nil </span><span class="cov0" title="0">{
+                return srv.(ClassifyNNServer).GetInfo(ctx, in)
+        }</span>
+        <span class="cov0" title="0">info := &amp;grpc.UnaryServerInfo{
+                Server:     srv,
+                FullMethod: ClassifyNN_GetInfo_FullMethodName,
+        }
+        handler := func(ctx context.Context, req interface{}) (interface{}, error) </span><span class="cov0" title="0">{
+                return srv.(ClassifyNNServer).GetInfo(ctx, req.(*emptypb.Empty))
+        }</span>
+        <span class="cov0" title="0">return interceptor(ctx, in, info, handler)</span>
+}
+
+func _ClassifyNN_CreateOneTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) <span class="cov0" title="0">{
+        in := new(TaskOneRequest)
+        if err := dec(in); err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">if interceptor == nil </span><span class="cov0" title="0">{
+                return srv.(ClassifyNNServer).CreateOneTask(ctx, in)
+        }</span>
+        <span class="cov0" title="0">info := &amp;grpc.UnaryServerInfo{
+                Server:     srv,
+                FullMethod: ClassifyNN_CreateOneTask_FullMethodName,
+        }
+        handler := func(ctx context.Context, req interface{}) (interface{}, error) </span><span class="cov0" title="0">{
+                return srv.(ClassifyNNServer).CreateOneTask(ctx, req.(*TaskOneRequest))
+        }</span>
+        <span class="cov0" title="0">return interceptor(ctx, in, info, handler)</span>
+}
+
+func _ClassifyNN_CreateBatchTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) <span class="cov0" title="0">{
+        in := new(TaskBatchRequest)
+        if err := dec(in); err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">if interceptor == nil </span><span class="cov0" title="0">{
+                return srv.(ClassifyNNServer).CreateBatchTask(ctx, in)
+        }</span>
+        <span class="cov0" title="0">info := &amp;grpc.UnaryServerInfo{
+                Server:     srv,
+                FullMethod: ClassifyNN_CreateBatchTask_FullMethodName,
+        }
+        handler := func(ctx context.Context, req interface{}) (interface{}, error) </span><span class="cov0" title="0">{
+                return srv.(ClassifyNNServer).CreateBatchTask(ctx, req.(*TaskBatchRequest))
+        }</span>
+        <span class="cov0" title="0">return interceptor(ctx, in, info, handler)</span>
+}
+
+func _ClassifyNN_CreateBatchCodeTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) <span class="cov0" title="0">{
+        in := new(TaskBatchRequest)
+        if err := dec(in); err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">if interceptor == nil </span><span class="cov0" title="0">{
+                return srv.(ClassifyNNServer).CreateBatchCodeTask(ctx, in)
+        }</span>
+        <span class="cov0" title="0">info := &amp;grpc.UnaryServerInfo{
+                Server:     srv,
+                FullMethod: ClassifyNN_CreateBatchCodeTask_FullMethodName,
+        }
+        handler := func(ctx context.Context, req interface{}) (interface{}, error) </span><span class="cov0" title="0">{
+                return srv.(ClassifyNNServer).CreateBatchCodeTask(ctx, req.(*TaskBatchRequest))
+        }</span>
+        <span class="cov0" title="0">return interceptor(ctx, in, info, handler)</span>
+}
+
+func _ClassifyNN_CreateBatchsTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) <span class="cov0" title="0">{
+        in := new(TaskBatchsRequest)
+        if err := dec(in); err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">if interceptor == nil </span><span class="cov0" title="0">{
+                return srv.(ClassifyNNServer).CreateBatchsTask(ctx, in)
+        }</span>
+        <span class="cov0" title="0">info := &amp;grpc.UnaryServerInfo{
+                Server:     srv,
+                FullMethod: ClassifyNN_CreateBatchsTask_FullMethodName,
+        }
+        handler := func(ctx context.Context, req interface{}) (interface{}, error) </span><span class="cov0" title="0">{
+                return srv.(ClassifyNNServer).CreateBatchsTask(ctx, req.(*TaskBatchsRequest))
+        }</span>
+        <span class="cov0" title="0">return interceptor(ctx, in, info, handler)</span>
+}
+
+// ClassifyNN_ServiceDesc is the grpc.ServiceDesc for ClassifyNN service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var ClassifyNN_ServiceDesc = grpc.ServiceDesc{
+        ServiceName: "nn_go.ClassifyNN",
+        HandlerType: (*ClassifyNNServer)(nil),
+        Methods: []grpc.MethodDesc{
+                {
+                        MethodName: "GetInfo",
+                        Handler:    _ClassifyNN_GetInfo_Handler,
+                },
+                {
+                        MethodName: "CreateOneTask",
+                        Handler:    _ClassifyNN_CreateOneTask_Handler,
+                },
+                {
+                        MethodName: "CreateBatchTask",
+                        Handler:    _ClassifyNN_CreateBatchTask_Handler,
+                },
+                {
+                        MethodName: "CreateBatchCodeTask",
+                        Handler:    _ClassifyNN_CreateBatchCodeTask_Handler,
+                },
+                {
+                        MethodName: "CreateBatchsTask",
+                        Handler:    _ClassifyNN_CreateBatchsTask_Handler,
+                },
+        },
+        Streams:  []grpc.StreamDesc{},
+        Metadata: "server.proto",
+}
+</pre>
+		
+		<pre class="file" id="file23" style="display: none">package security
+
+import (
+        "golang.org/x/crypto/bcrypt"
+)
+
+func HashPassword(password string) (string, error) <span class="cov0" title="0">{
+        hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+        if err != nil </span><span class="cov0" title="0">{
+                return "", err
+        }</span>
+        <span class="cov0" title="0">return string(hash), nil</span>
+}
+
+func CheckPassword(hashedPassword, password string) bool <span class="cov0" title="0">{
+        err := bcrypt.CompareHashAndPassword([]byte(hashedPassword), []byte(password))
+        return err == nil
+}</span>
+</pre>
+		
+		<pre class="file" id="file24" style="display: none">package security
+
+import (
+        "fmt"
+        "time"
+
+        "github.com/PerfectStepCoder/yp_go_nn/src/configs"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/models"
+        "github.com/golang-jwt/jwt/v4"
+)
+
+type OperatorJWT struct {
+        OperatorUID string
+        Role        string
+}
+
+func GenerateJWT(operator *models.Operator) (string, error) <span class="cov0" title="0">{
+        // Определение времени истечения токена
+        expirationTime := time.Now().Add(24 * time.Hour)
+
+        // Создание токена с информацией о пользователе
+        claims := &amp;jwt.MapClaims{
+                "operator_uid": operator.OperatorUID,
+                "role":         operator.Role,
+                "exp":          expirationTime.Unix(),
+        }
+
+        // Создаем токен с подписью
+        token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+        return token.SignedString(configs.SettingsGlobal.SecretJWT)
+}</span>
+
+// ExtractUserFromClaims извлекает данные пользователя из JWT claims
+func ExtractUserFromClaims(claims *jwt.MapClaims) (*OperatorJWT, error) <span class="cov0" title="0">{
+
+        operatorID, ok := (*claims)["operator_uid"].(string)
+        if !ok </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("invalid user_uid claim")
+        }</span>
+
+        <span class="cov0" title="0">role, ok := (*claims)["role"].(string)
+        if !ok </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("invalid role claim")
+        }</span>
+
+        // Возвращаем структуру пользователя
+        <span class="cov0" title="0">return &amp;OperatorJWT{
+                OperatorUID: operatorID,
+                Role:        role,
+        }, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file25" style="display: none">package servers
+
+import (
+        "context"
+        "fmt"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
+        pb "github.com/PerfectStepCoder/yp_go_nn/src/internal/proto/gen"
+        "google.golang.org/grpc"
+        "google.golang.org/protobuf/types/known/emptypb"
+        "log"
+        "net"
+        "runtime"
+        "sync"
+)
+
+// ServerGRPC поддерживает все необходимые методы сервера.
+type ServerGRPC struct {
+        nn *engine.OnnxNeuralNetwork
+        pb.UnimplementedClassifyNNServer
+        server       *grpc.Server
+        countWorkers int
+}
+
+// CreateTask - отправляем изображение для классификации.
+func (s *ServerGRPC) CreateOneTask(ctx context.Context, in *pb.TaskOneRequest) (*pb.TaskOneResponse, error) <span class="cov0" title="0">{
+        var response pb.TaskOneResponse
+
+        image, err := engine.BytesToFloat32Matrix(in.Image, int(in.Height), int(in.Width))
+
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov0" title="0">labelClassNames, err := s.nn.Detect(image)
+
+        response.TaskUID = in.TaskUID
+        response.ClassName = labelClassNames[0]
+
+        return &amp;response, nil</span>
+}
+
+// CreateBatchTask - отправляем изображение для классификации.
+func (s *ServerGRPC) CreateBatchTask(ctx context.Context, in *pb.TaskBatchRequest) (*pb.TaskBatchResponse, error) <span class="cov0" title="0">{
+        var response pb.TaskBatchResponse
+
+        images := make([][]float32, len(in.Images))
+
+        for i, image := range in.Images </span><span class="cov0" title="0">{
+                img, err := engine.BytesToFloat32Slice(image)
+                if err != nil </span><span class="cov0" title="0">{
+                        fmt.Println(err)
+                }</span>
+                <span class="cov0" title="0">images[i] = img</span>
+        }
+
+        <span class="cov0" title="0">labelClassNames, err := s.nn.Detect(images)
+        if err != nil </span><span class="cov0" title="0">{
+                fmt.Println(err)
+        }</span>
+
+        <span class="cov0" title="0">response.TaskUID = in.TaskUID
+        response.ClassNames = labelClassNames
+
+        return &amp;response, nil</span>
+}
+
+// CreateBatchCodeTask - отправляем батч изображений для классификации.
+func (s *ServerGRPC) CreateBatchCodeTask(ctx context.Context, in *pb.TaskBatchRequest) (*pb.TaskBatchCodeResponse, error) <span class="cov8" title="1">{
+        var response pb.TaskBatchCodeResponse
+
+        images := make([][]float32, len(in.Images))
+
+        for i, image := range in.Images </span><span class="cov8" title="1">{
+                img, err := engine.BytesToFloat32Slice(image)
+                if err != nil </span><span class="cov0" title="0">{
+                        fmt.Println(err)
+                }</span>
+                <span class="cov8" title="1">images[i] = img</span>
+        }
+
+        <span class="cov8" title="1">labelClassCodes, err := s.nn.DetectCode(images)
+        if err != nil </span><span class="cov0" title="0">{
+                fmt.Println(err)
+        }</span>
+
+        <span class="cov8" title="1">response.TaskUID = in.TaskUID
+        response.ClassCodes = engine.IntToInt32Slice(labelClassCodes)
+
+        return &amp;response, nil</span>
+}
+
+func (s *ServerGRPC) CreateBatchsTask(ctx context.Context, in *pb.TaskBatchsRequest) (*pb.TaskBatchsResponse, error) <span class="cov0" title="0">{
+        var response pb.TaskBatchsResponse
+
+        var wg sync.WaitGroup
+        wg.Add(s.countWorkers) // Увеличиваем счетчик для ожидания
+
+        inputCh := make(chan *pb.TaskBatchRequest, len(in.Batchs))
+        outputCh := make(chan *pb.TaskBatchResponse, len(in.Batchs))
+
+        for _, batch := range in.Batchs </span><span class="cov0" title="0">{
+                inputCh &lt;- batch
+        }</span>
+
+        <span class="cov0" title="0">fmt.Printf("Got batches: %d", len(inputCh))
+        close(inputCh)
+
+        // Обработка батчей
+        for i := 0; i &lt; s.countWorkers; i++ </span><span class="cov0" title="0">{
+                go func(inputCh chan *pb.TaskBatchRequest, outputCh chan *pb.TaskBatchResponse) </span><span class="cov0" title="0">{
+                        defer wg.Done() // уменьшаем счетчик по завершении работы
+                        for batch := range inputCh </span><span class="cov0" title="0">{
+                                result, _ := s.CreateBatchTask(context.Background(), batch)
+                                outputCh &lt;- result
+                        }</span>
+                }(inputCh, outputCh)
+        }
+
+        // Горутинa для закрытия outputCh после завершения всех обработчиков
+        <span class="cov0" title="0">go func() </span><span class="cov0" title="0">{
+                wg.Wait()       // Ожидаем завершения всех горутин
+                close(outputCh) // Закрываем outputCh, чтобы завершить чтение из него
+        }</span>()
+
+        <span class="cov0" title="0">for result := range outputCh </span><span class="cov0" title="0">{
+                response.Batchs = append(response.Batchs, result)
+        }</span>
+
+        <span class="cov0" title="0">return &amp;response, nil</span>
+}
+
+func NewServerGRPC(nn *engine.OnnxNeuralNetwork) (*ServerGRPC, error) <span class="cov8" title="1">{
+
+        return &amp;ServerGRPC{
+                nn:           nn,
+                countWorkers: runtime.NumCPU(),
+        }, nil
+}</span>
+
+func (s *ServerGRPC) Start(addr string) error <span class="cov0" title="0">{
+
+        // Cоздаём gRPC-сервер без зарегистрированной службы
+        s.server = grpc.NewServer(
+                grpc.MaxRecvMsgSize(50*1024*1024), // Максимальный размер принимаемого сообщения — 50 МБ
+                grpc.MaxSendMsgSize(50*1024*1024), // Максимальный размер отправляемого сообщения — 50 МБ
+        )
+
+        // Регистрируем сервис
+        pb.RegisterClassifyNNServer(s.server, s)
+
+        listen, err := net.Listen("tcp", addr)
+
+        if err != nil </span><span class="cov0" title="0">{
+                log.Fatalln(err)
+        }</span>
+
+        <span class="cov0" title="0">return s.server.Serve(listen)</span>
+}
+
+func (s *ServerGRPC) Stop(ctx context.Context) error <span class="cov0" title="0">{
+        // Остановка сервера с плавным завершением
+        s.server.GracefulStop()
+        return nil
+}</span>
+
+func (s *ServerGRPC) GetInfo(ctx context.Context, in *emptypb.Empty) (*pb.ServiceInfoNN, error) <span class="cov0" title="0">{
+        var response pb.ServiceInfoNN
+        response.Name = "YoloNN"
+        response.Description = "[Go] Trained Fashion MNIST"
+        response.Version = "1.0.0.0"
+        return &amp;response, nil
+}</span>
+</pre>
+		
+		<pre class="file" id="file26" style="display: none">package servers
+
+import (
+        "context"
+        httpp "github.com/PerfectStepCoder/yp_go_nn/src/api/irest"
+        _ "github.com/PerfectStepCoder/yp_go_nn/src/api/irest/docs" // Импорт сгенерированной документации
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/engine"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/storage"
+        "github.com/go-chi/chi/v5"
+        "net/http"
+
+        httpSwagger "github.com/swaggo/http-swagger"
+)
+
+type ServerHTTP struct {
+        storage storage.Storage
+        nn      *engine.OnnxNeuralNetwork
+        router  *chi.Mux
+        server  *http.Server
+}
+
+func NewHTTPServer(mainStorage storage.Storage, nn *engine.OnnxNeuralNetwork) (*ServerHTTP, error) <span class="cov0" title="0">{
+        return &amp;ServerHTTP{
+                storage: mainStorage,
+                nn:      nn,
+                router:  chi.NewRouter(),
+        }, nil
+}</span>
+
+func (s *ServerHTTP) Start(addr string) error <span class="cov0" title="0">{
+
+        // Swagger endpoint
+        s.router.Mount("/swagger", httpSwagger.WrapHandler)
+
+        // Register routes
+        s.router.Post("/register", httpp.RegisterHandler(s.storage))
+        s.router.Post("/login", httpp.LoginHandler(s.storage))
+
+        // Защищенные маршруты
+        s.router.Group(func(r chi.Router) </span><span class="cov0" title="0">{
+                r.Use(httpp.JWTMiddleware)
+                // Operators
+                r.Route("/operators", func(r chi.Router) </span><span class="cov0" title="0">{
+                        r.Get("/id/{operatorUID}", httpp.GetOperatorByUIDHandler(s.storage))
+                        r.Get("/name/{name}", httpp.GetOperatorByNameHandler(s.storage))
+                }</span>)
+                // Tasks
+                <span class="cov0" title="0">r.Route("/tasks", func(r chi.Router) </span><span class="cov0" title="0">{
+                        r.Post("/one", httpp.TaskOneHandler(s.storage, s.nn))
+                }</span>)
+        })
+
+        // Инициализируем HTTP сервер
+        <span class="cov0" title="0">s.server = &amp;http.Server{
+                Addr:    addr,
+                Handler: s.router,
+        }
+
+        return s.server.ListenAndServe()</span>
+}
+
+func (s *ServerHTTP) Stop(ctx context.Context) error <span class="cov0" title="0">{
+        // Остановка сервера с плавным завершением
+        if err := s.server.Shutdown(ctx); err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file27" style="display: none">package storage
+
+import (
+        "fmt"
+
+        "gorm.io/driver/postgres"
+        "gorm.io/gorm"
+
+        "github.com/PerfectStepCoder/yp_go_nn/src/configs"
+        "github.com/PerfectStepCoder/yp_go_nn/src/internal/models"
+)
+
+type StorageInPostgres struct {
+        connectionToDB string
+        DB             *gorm.DB
+}
+
+func NewStorageInPostgres(connectionString string) (*StorageInPostgres, error) <span class="cov0" title="0">{
+
+        newStorage := StorageInPostgres{connectionToDB: connectionString, DB: nil}
+
+        // Подключение к базе данных
+        db, err := gorm.Open(postgres.Open(connectionString), &amp;gorm.Config{})
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to connect to database: %w", err)
+        }</span>
+
+        // Установка поддержки UID
+        <span class="cov0" title="0">err = db.Exec(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`).Error
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to create extension: %v", err)
+        }</span>
+
+        // Миграция схемы
+        <span class="cov0" title="0">if err := db.AutoMigrate(&amp;models.Operator{}); err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to migrate database: %w", err)
+        }</span>
+        <span class="cov0" title="0">newStorage.DB = db
+
+        return &amp;newStorage, nil</span>
+}
+
+func (s *StorageInPostgres) CreateOperator(user *models.Operator) (string, error) <span class="cov0" title="0">{ // userUID
+        if err := s.DB.Create(user).Error; err != nil </span><span class="cov0" title="0">{
+                return "", err
+        }</span>
+        <span class="cov0" title="0">return user.OperatorUID.String(), nil</span>
+}
+
+func (s *StorageInPostgres) GetAllOperators() ([]models.Operator, error) <span class="cov0" title="0">{
+        var users []models.Operator
+        if err := s.DB.Find(&amp;users).Error; err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">return users, nil</span>
+}
+
+func (s *StorageInPostgres) GetOperatorByUID(operatorUID string) (*models.Operator, error) <span class="cov0" title="0">{
+        var user models.Operator
+        if err := s.DB.Where("operator_uid = ?", operatorUID).First(&amp;user).Error; err != nil </span><span class="cov0" title="0">{
+                return &amp;user, err
+        }</span>
+        <span class="cov0" title="0">return &amp;user, nil</span>
+}
+
+func (s *StorageInPostgres) GetOperatorByName(name string) (*models.Operator, error) <span class="cov0" title="0">{
+        var user models.Operator
+        if err := s.DB.Where("name = ?", name).First(&amp;user).Error; err != nil </span><span class="cov0" title="0">{
+                return &amp;user, err
+        }</span>
+        <span class="cov0" title="0">return &amp;user, nil</span>
+}
+
+func (s *StorageInPostgres) Close() <span class="cov0" title="0">{
+        if s.DB != nil </span><span class="cov0" title="0">{
+                sqlDB, err := s.DB.DB()
+                if err != nil </span><span class="cov0" title="0">{
+                        configs.Logger.Errorf("failed to get database connection: %s", err)
+                }</span>
+                <span class="cov0" title="0">sqlDB.Close()</span>
+        }
+}
+</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>
